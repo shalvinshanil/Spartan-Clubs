@@ -234,6 +234,60 @@ padding: 18px;
     font-size: 14px; 
 }
 
+
+/* ICON BAR */
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  transform: translateY(10%);
+}
+
+.icon-bar a {
+  display: block;
+  border-radius: 50%;
+  text-align: center;
+  padding: 25px;
+  transition: all 0.3s ease;
+  font-size: 20px;
+  
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.icon_all {
+  background: gray;
+  color: white;
+  
+}
+
+.icon_academic {
+  background-color: red;
+  color: white;
+
+}
+
+.icon_special_interest {
+  background-color: gold;
+  color: white;
+}
+
+.icon_fraternity {
+  background-color: green;
+  color: white;
+}
+
+.icon_sports {
+  background-color: blue;
+  color: white;
+}
+.icon_cultural_religious {
+  background-color: orange;
+  color: white;
+}
+
+
 </style>
 </head>
 
@@ -274,6 +328,15 @@ padding: 18px;
 
 <div class="body"> <!------------------------------------ BODY_PAGE ---->
 
+
+<!----------------------------------------------SIDE BAR---->
+<div class="icon-bar" onmouseup="refreshList(this)">
+  <a class="icon_all" onclick="sortClubs('all')" onmouseup="refreshList(this)"></a>
+  <a class="icon_academic" onclick="sortClubs('academic')" onmouseup="refreshList(this)"></a> 
+  <a class="icon_special_interest" onclick="sortClubs('special_interest')"    onmouseup="refreshList(this)"></a> 
+  <a class="icon_sports" onclick="sortClubs('fraternity_sorority')" onmouseup="refreshList(this)"></a>
+  <a class="icon_cultural_religious" onclick="sortClubs('cultural_religious')" onmouseup="refreshList(this)"></a> 
+</div>
 
 
 <!--------------------------------------------- CLUB NAMES --------->
