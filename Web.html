@@ -1,0 +1,637 @@
+REDESIGN SJ APP MODING 4/21
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/********************** HEADER SECTION *******************/
+.sjsu_home_header {
+background: white url("http://www.sjsu.edu/sjsuhome/assets/images/tagline-sjsu-1.gif");
+background-position: bottom right;
+background-repeat: no-repeat;
+font-style: normal;
+font-size: 20px;
+margin: 10px 10px
+}
+
+/********************** LINE ****************************/
+.layout_format {
+  color: ;
+  width: 100%; 
+}
+
+/********************** MAIN SECTION *******************/
+.main {
+  padding: 16px;
+  margin-bottom: 30px;
+}
+/********************** BODY SECTION *******************/
+.body {
+  padding: 20px;
+  margin-bottom: 10px;
+  margin: auto;
+}
+
+
+/* *********************** SEARCH BUTTON *******************************/
+.search_btn {
+  border: none;
+  outline: none;
+  padding: 12px 18px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  margin: 1px;          /* Space to the right */
+  margin-bottom: 4px;   /* Space at bottom */
+}
+
+.search_btn:hover {
+  background-color: #ddd;
+}
+
+.search_btn.active {
+  background-color: #666;
+  color: white;
+}
+
+
+
+/************************ FILTER BUTTON *******************************/
+.filterDiv {
+float: center;
+  background-color: #2196F3;
+  color: #ffffff;
+  width: 80%;
+  line-height: 60px; /* Button Height */
+  text-align: center;
+  display: none; /*** Doesn't work without this ***/
+  font-size: 15px;
+  margin: auto;
+  margin-bottom: 2px;   /* space at bottom */
+  box-shadow: 0 8px 16px 0 rgba(255,255,255,0.6), 0 6px 20px 0 rgba(0,0,0,0.2); 
+  /* Shadow effects */
+}
+
+
+.show {
+  display: block;
+}
+
+.container {
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.active, .filterDiv:hover 
+{
+  background-color: gold; /* #ccc */
+}
+
+filterDiv:hover, a:hover 
+{
+  opacity: 0.7;
+}
+
+/* After a club is active, color of button changes */
+.filterDiv.active 
+{
+  background-color: #456;
+}
+
+
+/**************************** ALL CLUB BLOCKS *******************************/
+
+.panel {
+  padding: 0 18px; /* top & bottom */
+  display: none;
+  background-color: white;
+  overflow: hidden;
+  /* modified 4.21 */
+    background: url(http://www.sjsu.edu/sjsuhome/assets/images/bg-left-sjsu-02.png);   
+  /* Image */
+  background-repeat: no-repeat; 
+  text-align:center;
+  margin-left: 70px;   /* banner alignment */
+   /* background-image: linear-gradient(to right, rgba(255,0,2,0), rgba(0,100,190,.5));
+   */ 
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 350px;
+  margin: auto;
+  align: center;
+  text-align: left;
+
+  font-family: arial;
+  padding: 0 20px; /* right & left */                                                     padding-top: 1px;
+  /* background gradient */
+  background-image: linear-gradient(to right, rgba(255,0,2,0), rgba(0,100,190,.5));  
+}
+
+.academic_color 
+{
+  background-image: linear-gradient(to right, rgba(255,0,2,0), rgba(250,0,0,.4));   
+}
+
+.special_interest_color 
+{
+  background-image: linear-gradient(to right, rgba(255,0,2,0), rgba(240,180,0,.4));   
+}
+
+.card_spacer 
+{
+    padding-bottom: 10px; /* below */
+}
+
+.learn_more_button
+{ 
+ padding-bottom: 1px; /* space below the 'learn more' button */
+ padding-left: 15px; /* offset */
+}
+
+/*************************** CLUB TAG COLOR  *******************************/
+.academic_tag{
+border-left: 6px solid red;
+}
+
+.sports_tag{
+border-left: 6px solid blue;
+}
+
+.special_interest_tag{
+border-left: 6px solid gold;
+}
+
+.sorority_tag{
+border-left: 6px solid green;
+}
+
+.cultural_religious_tag{
+border-left: 6px solid orange;
+}
+
+
+/*                 Fraternity/Sorority   (GREEN)                 */
+.fraternity_sorority_panel {
+  background-image: linear-gradient(to right, rgba(0,50,0,.1), rgba(0,200,0,.1),   rgba(0,50,0,.1)); /* Standard syntax (must be last) */
+  padding: 18 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;  
+}
+
+
+.fraternity_sorority_clubcard {
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  background-color: white;
+  font-family: arial;
+}
+/*------------------ ACADEMIC CLUBS ------------------*/
+
+
+/*------------------ CLUB INFO ---------------------*/
+
+/* CLUB IMAGE */
+.club_image 
+{
+padding: 18px;
+/* outline: 3px dashed blue; */
+}
+
+
+/* CLUB TITLE */
+.club_title 
+{
+  color: black;
+}
+
+
+/* MEMBER TITLE */
+.member_title 
+{
+ /* padding-top: 1px; */
+  color: black;
+  padding-left: 15px; /* offset */
+  font-size: 13px; 
+}
+
+/* CLUB PURPOSE */
+.club_purpose
+{
+  text-align: center;
+    padding-right: 80px;
+    padding-left: 80px;
+    font-size: 14px; 
+}
+
+</style>
+</head>
+
+
+
+
+
+
+
+<body>
+<div class= "layout_format">
+<!----------------------------------------------------------------------------------->
+<!------------------------ HEADER ------------------------>
+<div class="sjsu_home_header">
+  <img src="http://www.sjsu.edu/sjsuhome/assets/images/link-logo-08.png">
+  <hr> </div>
+<!------------------------- HEADER END -------------------->
+<!----------------------------------------------------------------------------------->
+
+
+
+<div class="main"> <!--------------- MAIN_PAGE --------------->
+
+ <!------------------------- SEARCH BUTTONS ------------------>
+<div id="myBtnContainer">
+  <button class="search_btn active" onclick="sortClubs('all')"> All </button>
+  
+  <button class="search_btn" onmouseup="refreshList(this)" style="border-left: 6px solid red;"            onclick="sortClubs('academic')"> Academic </button>
+  
+  <button class="search_btn" onmouseup="refreshList(this)" style="border-left: 6px solid gold;"  onclick="sortClubs('special_interest')"> Special Interest </button>
+  
+  <button class="search_btn" onmouseup="refreshList(this)" style="border-left: 6px solid green;" onclick="sortClubs('fraternity_sorority')"> Fraternity/Sorority </button>
+  
+  <button class="search_btn" onmouseup="refreshList(this)" style="border-left: 6px solid blue;" onclick="sortClubs('club_sports')"> Club Sports </button>
+  
+  <button class="search_btn" onmouseup="refreshList(this)" style="border-left: 6px solid orange;" onclick="sortClubs('cultural_religious')"> Cultural and Religious </button>
+</div>
+
+<div class="body"> <!------------------------------------ BODY_PAGE ---->
+
+
+
+<!--------------------------------------------- CLUB NAMES --------->
+<div class="container">
+
+  <button class="accordion filterDiv academic academic_tag">Academic_Type 1</button>
+  
+  <div class="panel"><!------------------------------------ Panel ------>
+  <p>Purpose: N/A</p>
+  
+<div class="card">
+
+    <div class="club_image">
+    <img src="https://bit.ly/2DkpCRV" style="width:100%">
+    </div>
+    
+    <h1 class="club_title" >Academic_Type 1</h1>
+    
+    <div class="member_title">
+      <p> President: Diana Castro</p>
+      <p> Advisor: Edwin Reyes</p>
+    </div>
+    
+    <p>Time: N/A</p>
+
+    <p><button>Contact</button></p>
+    <div class ="card_spacer"></div>
+  </div> 
+</div><!-------------------------------------------------- Panel END -->
+
+
+
+<!--------------------------------------------- Active Minds --------->
+  <button class="filterDiv special_interest special_interest_tag">Active Minds</button>
+  
+  <div class="panel"><!------------------------------------ Panel ------>
+
+    <div class="club_image">   
+    <img src="https://d3n756dfoku5i3.cloudfront.net/IhTZ2Me0TvvqbZWYpfbnY8e1QjIyhyzU.png" style="width:50%">
+    </div>
+    
+  <h3 class="club_title" >Active Minds</h3>
+    
+    <div class="club_purpose">
+    <p>Active Minds is established for the expressed purpose of increasing the awareness of the students, faculty, and staff at San Jose State University
+about the following:</p>
+
+<p><li>issues surrounding mental health</li><p>
+<p><li>symptoms related to mental health disorders</li><p>
+<p><li>mental health resources available both on campus and in the surrounding community </li><p>
+<p><li>Removing stigma surrounding mental health disorders so that students will feel more comfortable openly discussing mental-health related issues and seeking help when it is needed </li><p>
+<p><li>Promoting a general awareness of holistic health by emphasizing care of both body and
+mind </li><p>
+<p><li>Providing students with easy access to information about Eating Disorders, Depression, Bipolar Disorder, Schizophrenia, Post Traumatic Stress Disorder, Anxiety Disorders, and other mental health disorders </li><p>
+<p><li>Serving as a liaison between the student body and the mental health community by holding
+campus-wide activities such as hosting guest speakers, providing informational fact sheets, organizing fundraisers and running national Active Minds programs designed to reduce stigma and raise mental health awareness </li><p>
+<p><li>Providing a forum and building an open environment for all students to speak up about
+mental health</li><p>
+
+
+  </div>
+    
+<div class=" special_interest_color card">   
+  <p>Club info</p>
+    
+    <div class="member_title">
+      <p><b>President</b> Veena Velury</p>
+      <p><b>Treasurer</b> Zainab Hussain</p>
+      <p> Other(s): Andrea Wong, Daniel Gonzalez</p>
+    
+    <hr> 
+    <p>Time: n/a</p>
+    <p>Email: activemindssjsu@gmail.com</p>
+    
+    </div>
+    
+    <div class ="learn_more_button">
+      <form target="_blank" action="https://www.activeminds.org/">
+           <button type="submit">Learn more</button></form>  
+     </div>
+      
+  </div> 
+   <div class ="card_spacer"></div>
+</div><!-------------------------------------------------- Panel END -->
+
+
+
+<!--------------------------------------------- Academic Scholars Association --------->
+  <button class="filterDiv academic academic_tag">Academic Scholars Association</button>
+  
+  <div class="panel"><!------------------------------------ Panel ------>
+
+    <div class="club_image">   
+    <img src="https://s3.amazonaws.com/campus-cloud-image-  use/ltp0ldere74lusorop0qpi9ep19kwttjztz0tkyd908amd6d50.jpg" style="width:50%">
+    </div>
+    
+  <h3 class="club_title" >Academic Scholars Association</h3>
+    
+    <div class="club_purpose">
+    <p>Help foster innovative thinkers on campus that strive to become mentors, helping out in their communities while attaining a solid academic/social foundation.</p>
+  </div>
+    
+<div class=" academic_color card">   
+  <p>Club info</p>
+    
+    <div class="member_title">
+      <p><b>President</b> Rana Elbakkay</p>
+      <p> <b>Treasurer</b> Ali Nour</p>
+      <p> Other(s): Edwin Reyes</p>
+    
+    <hr>
+    <p>Time: n/a</p>
+    
+    </div>
+    
+    <div class ="learn_more_button">
+      <form target="_blank" action="https://sjsu.my.campusapp.com/#/clubs/49229">
+           <button type="submit">Learn more</button></form>  
+     </div>
+      
+  </div> 
+   <div class ="card_spacer"></div>
+</div><!-------------------------------------------------- Panel END -->
+
+
+
+
+
+
+<!--------------------------------------------- Type Sport 1 --------->
+  <button class="filterDiv club_sports sports_tag">Sport_Type 1</button>
+  
+  <div class="panel"><!------------------------------------ Panel ------>
+  <p>Purpose: N/A</p>
+  
+<div class="card">
+    <div class="club_image">
+    <img src="https://bit.ly/2DkpCRV" style="width:100%">
+    </div>
+    
+    <h1 class="club_title" >Sport_Type 1</h1>
+    
+    <div class="member_title">
+      <p> President: Rana Elbakkay</p>
+      <p> Advisor: Edwin Reyes</p>
+    </div>
+    
+    <p>Time: n/a</p>
+    <button onclick="">Contact</button>
+
+  </div> 
+  
+</div><!-------------------------------------------------- Panel END -->
+
+
+
+
+
+<!--------------------------------------------- Type Sport 1 --------->
+  <button class="filterDiv special_interest special_interest_tag">Special_Interest_Type 1</button>
+  
+  <div class="panel"><!------------------------------------ Panel ------>
+  <p>Purpose: N/A</p>
+  
+<div class="card">
+
+    <div class="club_image">
+    <img src="https://bit.ly/2DkpCRV" style="width:100%">
+    </div>
+    
+    <h1 class="club_title" >Special I</h1>
+    
+    <div class="member_title">
+      <p> President: Diana Castro</p>
+      <p> Advisor: Edwin Reyes</p>
+    </div>
+    
+    <p>Time: 4:00 pm</p>
+    <p><button>Contact</button></p>
+   
+  </div>
+  
+  <div class ="card_spacer"></div>
+</div><!-------------------------------------------------- Panel END -->
+
+
+
+
+
+<!--------------------------------------------- cultural_religious Type 1 --------->
+  <button class="filterDiv cultural_religious cultural_religious_tag">Cultural_Type 1</button>
+  
+  <div class="panel"><!------------------------------------ Panel ------>
+  <p>Purpose: N/A</p>
+  
+<div class="card">
+
+    <div class="club_image">
+    <img src="https://bit.ly/2DkpCRV" style="width:100%">
+    </div>
+    
+    <h1 class="club_title" >Religious_Type</h1>
+    
+    <div class="member_title">
+      <p> President: Diana Castro</p>
+      <p> Advisor: Edwin Reyes</p>
+    </div>
+    
+    <p>Time: 4:00 pm</p>
+    <p><button>Contact</button></p>
+  <div class ="card_spacer"></div>
+  
+  </div> 
+</div><!-------------------------------------------------- Panel END -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div> <!-------------------------------------------------- container -->
+
+
+
+<script>
+sortClubs("all")
+function sortClubs(c) 
+{
+  var clubsCategory, sortIndex;
+
+  clubsCategory = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  for (sortIndex = 0; sortIndex < clubsCategory.length; sortIndex++) 
+  {
+    hideClubs(clubsCategory[sortIndex], "show");
+    if (clubsCategory[sortIndex].className.indexOf(c) > -1) showClubs(clubsCategory[sortIndex], "show");
+  }
+}
+
+
+function showClubs(currentClub, actionToShow) 
+{
+  var clubIndex, club, checkClub;
+  club = currentClub.className.split(" ");
+  checkClub = actionToShow.split(" ");
+  
+  for (clubIndex = 0; clubIndex < checkClub.length; clubIndex++) 
+  {
+    if (club.indexOf(checkClub[clubIndex]) == -1) 
+    {
+        currentClub.className += " " + checkClub[clubIndex];
+    }
+  }
+}
+
+
+function hideClubs(currentCLub, actionShow) 
+{
+  var hideIndex, club, currentClub;
+  club = currentCLub.className.split(" ");
+  currentClub = actionShow.split(" ");
+  
+  for (hideIndex = 0; hideIndex < currentClub.length; hideIndex++) 
+  {
+    while (club.indexOf(currentClub[hideIndex]) > -1) 
+    {
+      club.splice(club.indexOf(currentClub[hideIndex]), 1);     
+    }
+  }
+  currentCLub.className = club.join(" "); /* To hide unvielent types while sorting catg.*/
+}
+
+
+// selected clubs: highlight catg
+var selectedCatg = document.getElementById("myBtnContainer");
+var btns = selectedCatg.getElementsByClassName("search_btn");
+
+for (var index = 0; index < btns.length; index++) 
+{
+  btns[index].addEventListener("click", function()
+  {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+
+
+
+var acc = document.getElementsByClassName("filterDiv");
+var j;
+
+for (j = 0; j < acc.length; j++) 
+{
+  acc[j].addEventListener("click", 
+  function() 
+  {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling; 
+    
+    if (panel.style.display === "block") 
+    {
+      panel.style.display = "none";
+    } else 
+    {
+      panel.style.display = "block";
+    }
+  }
+  );
+}
+
+
+
+
+function refreshList(obj) {
+   
+  var club = document.getElementsByClassName("panel");
+  var clubCatg = document.getElementsByClassName("filterDiv");
+  var clubIndex;
+
+  for (clubIndex = 0; clubIndex < club.length; clubIndex++) 
+  {
+      if (club[clubIndex].style.display === "block") 
+        {
+        clubCatg[clubIndex].classList.toggle("active");  <!---Clear active button color--->
+        club[clubIndex].style.display = "none";
+        }
+  }
+}
+
+
+
+</script>
+
+
+
+
+</div> <!---BODY_PAGE END--->
+<!----------------------------------------------------------------------------------->
+
+</div> <!---MAIN_PAGE END--->
+<!----------------------------------------------------------------------------------->
+
+</div> <!---layout_format--->
+
+</body>
+</html> 
+
+
+
+
