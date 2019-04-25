@@ -21,7 +21,7 @@ background-position: bottom right;
 background-repeat: no-repeat;
 font-style: normal;
 font-size: 20px;
-margin: 10px 10px
+margin: 10px 10px; /* editted 4/25: only added ';'*/
 }
 
 /********************** LINE ****************************/
@@ -58,11 +58,12 @@ margin: 10px 10px
   background-color: #ddd;
 }
 
+/* code doesn't reach here
 .search_btn.active {
   background-color: #666;
   color: white;
 }
-
+*/
 
 
 /************************ FILTER BUTTON *******************************/
@@ -235,56 +236,68 @@ padding: 18px;
 }
 
 
-/* ICON BAR */
+/*********************** ICON BAR ****************************/
 .icon-bar {
   position: fixed;
-  top: 50%;
-  transform: translateY(10%);
+  top: 40%;
+  transform: translateY(0%);
   transform: translateX(-50%);
-
+width: 70px;
 }
 
+/* Editting affects 
 .icon-bar s {
   display: block;
-  border-radius: 50%; /* circular shape */
+  border-radius: 50%;  
   padding: -5px;
   transition: all 0.3s ease;
 }
 
 .icon-bar s:hover {
-  background-color: #000;
-    opacity: 1;
+  background-color: gold;
+  opacity: .7;
 }
+*/
 
-.icon_all {
-  background: gray;
+.icon_all  {
+  background-color: gray;
+  border-radius: 30%;  
   color: white;
-  
+  margin: 5px;
 }
 
 .icon_academic {
   background-color: red;
+  border-radius: 30%;  
   color: white;
-
+  margin: 5px;
 }
 
 .icon_special_interest {
   background-color: gold;
+  border-radius: 30%;  
   color: white;
+  margin: 5px;
 }
 
 .icon_fraternity {
   background-color: green;
+  border-radius: 30%;  
   color: white;
+  margin: 5px;
 }
 
 .icon_sports {
   background-color: blue;
+  border-radius: 30%;
   color: white;
+  margin: 5px;
 }
 .icon_cultural_religious {
   background-color: orange;
+  border-radius: 30%;
   color: white;
+  margin: 5px;
 }
 
 
@@ -329,28 +342,31 @@ padding: 18px;
 <div class="body"> <!------------------------------------ BODY_PAGE ---->
 
 
-<!-----------------------------------------------------------------------[Jacky] edit the codeline: 
-img src="url">----------Find icon images close to 60pixals ----->
-<!----------------------------------------------SIDE ICON BAR---->
+<!----------[Jacky] edit the codeline: img src="url">----------Find icon images close to 60pixals ----------------------------------------------------------------------------------------->
+<!----------------------------------------------SIDE BAR---->
 <div class="icon-bar" onmouseup="refreshList(this)">
-  <s class="icon_all" onclick="sortClubs('all')" onmouseup="refreshList(this)">
+  <div class="icon_all" onclick="sortClubs('all')" onmouseup="refreshList(this)">
 <img src="https://img.icons8.com/ios/60/000000/dryclean-with-any-solvent.png">
- </s>
+ </div>
   
-  <s class="icon_academic" onclick="sortClubs('academic')" onmouseup="refreshList(this)">
+  <div class="icon_academic" onclick="sortClubs('academic')" onmouseup="refreshList(this)">
 <img src="https://img.icons8.com/ios-glyphs/60/000000/batch-assign.png">
-  </s> 
+  </div> 
   
-  <s class="icon_special_interest" onclick="sortClubs('special_interest')"    onmouseup="refreshList(this)">
-  <img src="https://img.icons8.com/material/60/000000/point-of-interest.png"></s> 
+  <div class="icon_special_interest" onclick="sortClubs('special_interest')"    onmouseup="refreshList(this)">
+  <img src="https://img.icons8.com/material/60/000000/point-of-interest.png"></div> 
   
-  <s class="icon_sports" onclick="sortClubs('fraternity_sorority')" onmouseup="refreshList(this)">
-  <img src="https://img.icons8.com/ios/60/000000/sport-filled.png"></s>
+  <div class="icon_sports" onclick="sortClubs('fraternity_sorority')" onmouseup="refreshList(this)">
+  <img src="https://img.icons8.com/ios/60/000000/sport-filled.png"></div>
   
-  <s class="icon_cultural_religious" onclick="sortClubs('cultural_religious')" onmouseup="refreshList(this)">
-<img src="https://img.icons8.com/ios-glyphs/60/000000/chapel.png"></s> 
+  <div class="icon_fraternity" onclick="sortClubs('fraternity')" 
+  onmouseup="refreshList(this)">
+<img src="https://img.icons8.com/ios-glyphs/60/000000/chapel.png"></div> 
 
-</div>
+  <div class="icon_cultural_religious" onclick="sortClubs('cultural_religious')" onmouseup="refreshList(this)">
+<img src="https://img.icons8.com/ios-glyphs/60/000000/chapel.png"></div> 
+
+</div><!------------------------------------------[Jacky]-^^^^^^^-> 
 
 
 <!--------------------------------------------- CLUB NAMES --------->
