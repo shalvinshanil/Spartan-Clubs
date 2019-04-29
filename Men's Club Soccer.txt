@@ -1,0 +1,31 @@
+<!----------------------NEW CLUB------------------------->
+<!---Men's Club Soccer--->
+<button class="filterDiv sports sports_tag"><li><a href="#">Men's Club Soccer</a></li></button>
+<div class="panel"><!------- Panel ------>
+
+<div class="club_image">   
+<img src="https://d3n756dfoku5i3.cloudfront.net/oRdm3GC4iEkVH0tKA2Vu9ZRXCDmAdCvI.png" style="width:20%"></div>
+    
+<div class="club_purpose">
+<p>To play soccer with fellow SJSU students and compete against other teams.</p>
+
+</div> <!----Purpose END --->
+    
+<div class=" sports_color card">   
+  <p class="club_title">Men's Club Soccer</p>
+   
+  <div class="member_title">
+    <p><b>President</b> Sandro Sallenbach</p>
+    <p><b>Treasurer</b> Antony Ambriz</p>
+    <hr> 
+    <p>Time: n/a</p>
+    <p>Email: n/a</p>
+  </div>
+    
+    <div class ="learn_more_button">
+      <form target="_blank" action="https://sjsu.my.campusapp.com/#/clubs/48639">
+      <button type="submit">Learn more</button></form></div>
+  </div> 
+   <div class ="card_spacer"></div>
+</div>
+<!------------------------- END ------------------------->

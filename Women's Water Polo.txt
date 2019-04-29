@@ -1,0 +1,32 @@
+<!----------------------NEW CLUB------------------------->
+<!---Women's Water Polo--->
+<button class="filterDiv sports sports_tag"><li><a href="#">Women's Water Polo</a></li></button>
+<div class="panel"><!------- Panel ------>
+
+<div class="club_image">   
+<img src="https://s3.amazonaws.com/campus-cloud-image-use/j8osumrgpc00tnn4cw0itto81dahkcen7h54l7wra065vtj9kn.jpg" style="width:50%"></div>
+    
+<div class="club_purpose">
+<p>Competitive and fun club sport.</p>
+
+</div> <!----Purpose END --->
+    
+<div class=" sports_color card">   
+  <p class="club_title">Women's Water Polo</p>
+   
+  <div class="member_title">
+    <p><b>C0-President</b> Abbie McGarvey</p>
+    <p><b>Treasurer</b> Laila Akhavi</p>
+    <p><b>Advisor</b> Kristine Adams</p>
+    <hr> 
+    <p>Time: n/a</p>
+    <p>Email: n/a</p>
+  </div>
+    
+    <div class ="learn_more_button">
+      <form target="_blank" action="https://sjsu.my.campusapp.com/#/clubs/47424">
+      <button type="submit">Learn more</button></form></div>
+  </div> 
+   <div class ="card_spacer"></div>
+</div>
+<!------------------------- END ------------------------->
