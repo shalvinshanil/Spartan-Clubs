@@ -1,0 +1,38 @@
+<!----------------------NEW CLUB------------------------->
+<!---AkbayanSJSU--->
+<button class="filterDiv cultural cultural_tag"><li><a href="#">AkbayanSJSU</a></li></button>
+<div class="panel"><!------- Panel ------>
+
+<div class="club_image">   
+<img src="https://d3n756dfoku5i3.cloudfront.net/WXikn3rTzHdiQ7uacnSrv8A60bnbe099.png" style="width:50%"></div>
+    
+<div class="club_purpose">
+<p>Purposes of this organization are: 
+To promote by close contact an exchange of ideas and experiences to become socially, culturally, and educationally involved with fellow students who share common interests in Pilipino/Pilipino American culture and heritage. </p>
+ 
+<p>To establish a better understanding and appreciation of the Pilipino/Pilipino American Community and its youth as a whole. </p>
+ 
+<p>To encourage all efforts and activities in connection with “Akbayan.”</p>
+
+</div> <!----Purpose END --->
+    
+<div class=" cultural_color card">   
+  <p class="club_title">AkbayanSJSU</p>
+   
+  <div class="member_title">
+    <p><b>President</b> Camille Kae Valerio</p>
+    <p><b>Vice President</b> Malia Campos</p>
+    <p><b>Treasurer</b> Serene Chloe Agdipa</p>
+    <p> Other(s): NAME</p>
+    <hr> 
+    <p>Time: TIME</p>
+    <p>Email: contact@akbayansjsu.org</p>
+  </div>
+    
+    <div class ="learn_more_button">
+      <form target="_blank" action="http://www.akbayansjsu.org">
+      <button type="submit">Learn more</button></form></div>
+  </div> 
+   <div class ="card_spacer"></div>
+</div>
+<!------------------------- END ------------------------->
