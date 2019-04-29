@@ -1,5 +1,6 @@
 <!----------------------NEW CLUB------------------------->
-<button class="filterDiv special_interest special_interest_tag"><li><a href="#">CLUBNAME</a></li></button>
+<!---CLUBNAME--->
+<button class="filterDiv academic academic_tag"><li><a href="#">CLUBNAME</a></li></button>
 <div class="panel"><!------- Panel ------>
 
 <div class="club_image">   
@@ -19,7 +20,7 @@
 
 </div> <!----Purpose END --->
     
-<div class=" special_interest_color card">   
+<div class=" academic_color card">   
   <p class="club_title">CLUBNAME</p>
    
   <div class="member_title">
