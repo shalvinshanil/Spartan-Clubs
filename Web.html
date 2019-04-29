@@ -140,6 +140,7 @@ filterDiv:hover, a:hover
   background-image: linear-gradient(to right, rgba(255,0,2,0), rgba(0,100,190,.5));  
 }
 
+/**************** COLOR CARDS ****************/
 .academic_color 
 {
   background-image: linear-gradient(to right, rgba(255,0,2,0), rgba(250,0,0,.4));   
@@ -150,6 +151,16 @@ filterDiv:hover, a:hover
   background-image: linear-gradient(to right, rgba(255,0,2,0), rgba(240,180,0,.4));   
 }
 
+.fraternity_color 
+{
+  background-image: linear-gradient(to right, rgba(255,0,2,0), rgba(63, 166, 42, .7));   
+}
+
+.cultural_religious_color 
+{
+  background-image: linear-gradient(to right, rgba(255,0,2,0), rgba(63, 166, 42, .7));   
+}
+/********************************************/
 .card_spacer 
 {
     padding-bottom: 10px; /* below */
@@ -868,10 +879,12 @@ function searchClub()
         if (txtValue.toUpperCase().indexOf(filter) > -1) 
         {
             li[i].style.display = "";
+            showClubs(clubsCategory[i], "show"); /* modified */
         } 
         else 
         {
             li[i].style.display = "none";
+            hideClubs(clubsCategory[i], "show");  /* modified */
         }
     }
 }
