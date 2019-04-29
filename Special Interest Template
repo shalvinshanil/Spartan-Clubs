@@ -1,0 +1,40 @@
+<!----------------------NEW CLUB------------------------->
+<button class="filterDiv special_interest special_interest_tag"><li><a href="#">CLUBNAME</a></li></button>
+<div class="panel"><!------- Panel ------>
+
+<div class="club_image">   
+<img src="https://www.activeminds.org/wp-content/uploads/2018/11/logo.png" style="width:50%"></div>
+    
+<div class="club_purpose">
+<p>PUROSE</p>
+
+<!---IF_EXTRA--->
+<!---Show more ---->
+<span id="dots">...</span><span id="more">
+<p> 
+<!---Extra_Info---->  
+</p></span> <!---Show less --->
+<button onclick="showMoreDetails()" id="showMore" style="margin-bottom:20px;">Read more</button>
+
+
+</div> <!----Purpose END --->
+    
+<div class=" special_interest_color card">   
+   <p class="club_title">Active Minds</p>
+   
+  <div class="member_title">
+    <p><b>President</b> NAME</p>
+    <p><b>Treasurer</b> NAME</p>
+    <p> Other(s): NAME</p>
+    <hr> 
+    <p>Time: TIME</p>
+    <p>Email: EMAIL</p>
+  </div>
+    
+    <div class ="learn_more_button">
+      <form target="_blank" action="WEBSITE_NAME">
+      <button type="submit">Learn more</button></form></div>
+  </div> 
+   <div class ="card_spacer"></div>
+</div>
+<!------------------------- END ------------------------->
