@@ -304,6 +304,47 @@ width: 70px;
 }
 
 
+
+
+#search_box {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+ 
+}
+
+#myUL li a {
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block;
+}
+
+
+
 </style>
 </head>
 
@@ -374,6 +415,72 @@ width: 70px;
 
 <!--------------------------------------------- CLUB NAMES --------->
 <div class="container">
+
+
+
+<input type="text" id="myInput" onkeyup="searchClub()" placeholder="Search for names.." title="Type in a name">
+
+<ul id="myUL">
+
+<button class="filterDiv special_interest special_interest_tag"><li><a href="#">Active Minds</a></li></button>
+  
+  <div class="panel"><!------------------------------------ Panel ------>
+
+    <div class="club_image">   
+    <img src="https://www.activeminds.org/wp-content/uploads/2018/11/logo.png" style="width:50%">
+    </div>
+    
+  <h3 class="club_title" >Active Minds</h3>
+    
+    <div class="club_purpose">
+    <p>Active Minds is established for the expressed purpose of increasing the awareness of the students, faculty, and staff at San Jose State University
+about the following:</p>
+
+<p><li>issues surrounding mental health</li><p>
+<p><li>symptoms related to mental health disorders</li><p>
+<p><li>mental health resources available both on campus and in the surrounding community </li><p>
+<p><li>Removing stigma surrounding mental health disorders so that students will feel more comfortable openly discussing mental-health related issues and seeking help when it is needed </li><p>
+<p><li>Promoting a general awareness of holistic health by emphasizing care of both body and
+mind </li><p>
+<p><li>Providing students with easy access to information about Eating Disorders, Depression, Bipolar Disorder, Schizophrenia, Post Traumatic Stress Disorder, Anxiety Disorders, and other mental health disorders </li><p>
+<p><li>Serving as a liaison between the student body and the mental health community by holding
+campus-wide activities such as hosting guest speakers, providing informational fact sheets, organizing fundraisers and running national Active Minds programs designed to reduce stigma and raise mental health awareness </li><p>
+<p><li>Providing a forum and building an open environment for all students to speak up about
+mental health</li></p>
+
+
+  </div>
+    
+<div class=" special_interest_color card">   
+  <p>Club info</p>
+    
+    <div class="member_title">
+      <p><b>President</b> Veena Velury</p>
+      <p><b>Treasurer</b> Zainab Hussain</p>
+      <p> Other(s): Andrea Wong, Daniel Gonzalez</p>
+    
+    <hr> 
+    <p>Time: n/a</p>
+    <p>Email: activemindssjsu@gmail.com</p>
+    
+    </div>
+    
+    <div class ="learn_more_button">
+      <form target="_blank" action="https://www.activeminds.org/">
+           <button type="submit">Learn more</button></form>  
+     </div>
+      
+  </div> 
+   <div class ="card_spacer"></div>
+</div><!-------------------------------------------------- END -->
+
+
+
+
+</ul>
+
+
+
 
   <button class="accordion filterDiv academic academic_tag">Academic_Type 1</button>
   
@@ -742,6 +849,31 @@ function refreshList(obj) {
         club[clubIndex].style.display = "none";
         }
   }
+}
+
+
+function searchClub() 
+{
+    var input, filter, ul, li, a, i, txtValue;
+
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+
+    for (i = 0; i < li.length; i++) 
+    {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) 
+        {
+            li[i].style.display = "";
+        } 
+        else 
+        {
+            li[i].style.display = "none";
+        }
+    }
 }
 
 
