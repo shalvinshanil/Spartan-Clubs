@@ -1,0 +1,32 @@
+<!----------------------NEW CLUB------------------------->
+<!---CLUBNAME--->
+<button class="filterDiv fraternity fraternity_tag"><li><a href="#">Academic Scholars Association</a></li></button>
+<div class="panel"><!------- Panel ------>
+
+<div class="club_image">   
+<img src="https://s3.amazonaws.com/campus-cloud-image-use/ltp0ldere74lusorop0qpi9ep19kwttjztz0tkyd908amd6d50.jpg" style="width:50%"></div>
+    
+<div class="club_purpose">
+<p>Help foster innovative thinkers on campus that strive to become mentors, helping out in their communities while attaining a solid fraternity/social foundation.</p>
+
+</div> <!----Purpose END --->
+    
+<div class=" fraternity_color card">   
+  <p class="club_title">Academic Scholars Association</p>
+   
+  <div class="member_title">
+    <p><b>President</b> Rana Elbakkay</p>
+    <p><b>Treasurer</b> Ali Nour</p>
+    <p> Other(s): Edwin Reyes</p>
+    <hr> 
+    <p>Time: n/a</p>
+    <p>Email: n/a</p>
+  </div>
+    
+    <div class ="learn_more_button">
+      <form target="_blank" action="https://sjsu.my.campusapp.com/#/clubs/49229">
+      <button type="submit">Learn more</button></form></div>
+  </div> 
+   <div class ="card_spacer"></div>
+</div>
+<!------------------------- END ------------------------->
