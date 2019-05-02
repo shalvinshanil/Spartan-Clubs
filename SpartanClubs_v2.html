@@ -427,8 +427,10 @@ onclick="sortClubs('cultural')" onmouseup="refreshList(this)">
 
 <!----------------------- CLUB LIST BEGIN ----------------->
 <div class="container"> 
-<input type="text" id="myInput" onkeyup="searchClub()" placeholder="Search for names ..." title="Type in a name">
 
+
+<!---------------------- SEARCH BAR ------------------->
+<input type="text" id="myInput" onclick="disableBtn()" onkeyup="searchClub()" placeholder="Search for names ..." title="Type in a name">
 
 <hr>
 
@@ -885,8 +887,7 @@ for (j = 0; j < acc.length; j++)
     if (panel.style.display === "block") 
     {
       panel.style.display = "none";
-    } else 
-    {
+    } else {
       panel.style.display = "block";
     }
   }
@@ -904,11 +905,12 @@ function refreshList(obj) {
 
   for (clubIndex = 0; clubIndex < club.length; clubIndex++) 
   {
-      if (club[clubIndex].style.display === "block") 
-        {
-        clubCatg[clubIndex].classList.toggle("active");  <!---Clear active button color--->
-        club[clubIndex].style.display = "none";
-        }
+    if (club[clubIndex].style.display === "block") 
+    {
+      <!---Clear active button color--->      
+      clubCatg[clubIndex].classList.toggle("active");  
+      club[clubIndex].style.display = "none";
+    }
   }
 }
 
@@ -929,15 +931,41 @@ function searchClub()
         txtValue = a.textContent || a.innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) 
         {
-            li[i].style.display = "";
-      showClubs(clubsCategory[i], "show"); /* modified */
+          li[i].style.display = "";
+          showClubs(clubsCategory[i], "show"); /* modified */
         } 
         else 
         {
-            li[i].style.display = "none";
-            hideClubs(clubsCategory[i], "show");  /* modified */
+          li[i].style.display = "none";
+          hideClubs(clubsCategory[i], "show");  /* modified */
         }
+        /* Fixes the bug with searching and switching catg. */
+        if(document.getElementById("myInput").value == "")
+        {
+          enableBtn();
+        }
+        else
+          disableBtn(); 
     }
+}
+
+/* Fixes the bug with searching and switching catg. */
+function disableBtn() 
+{
+  document.getElementById("block_academic").disabled = true;
+  document.getElementById("block_interest").disabled = true;
+  document.getElementById("block_fraternity").disabled = true;                      
+  document.getElementById("block_sports").disabled = true;
+  document.getElementById("block_cultural").disabled = true;
+}
+
+function enableBtn() 
+{
+  document.getElementById("block_academic").disabled = false;
+  document.getElementById("block_interest").disabled = false;
+  document.getElementById("block_fraternity").disabled = false;                       
+  document.getElementById("block_sports").disabled = false;
+  document.getElementById("block_cultural").disabled = false;
 }
 
 
