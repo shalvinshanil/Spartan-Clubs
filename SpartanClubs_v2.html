@@ -377,17 +377,17 @@ display: inline-block;
 <!------------------------ MAIN --------------------------->
 <div class="main">
 <div id="myBtnContainer">
-  <button class="search_btn active" onclick="sortClubs('all')"> All </button>
+  <button class="search_btn active" id="block_all" onclick="sortClubs('all')"> All </button>
   
-  <button class="search_btn" onmouseup="refreshList(this)" style="border-left: 6px solid red;" onclick="sortClubs('academic')"> Academic </button>
+  <button class="search_btn" id="block_academic" onmouseup="refreshList(this)" style="border-left: 6px solid red;" onclick="sortClubs('academic')"> Academic </button>
   
-  <button class="search_btn" onmouseup="refreshList(this)" style="border-left: 6px solid gold;"  onclick="sortClubs('special_interest')"> Special Interest </button>
+  <button class="search_btn" id="block_interest" onmouseup="refreshList(this)" style="border-left: 6px solid gold;"  onclick="sortClubs('special_interest')"> Special Interest </button>
   
-  <button class="search_btn" onmouseup="refreshList(this)" style="border-left: 6px solid green;" onclick="sortClubs('fraternity')"> Fraternity/Sorority </button>
+  <button class="search_btn" id="block_fraternity" onmouseup="refreshList(this)" style="border-left: 6px solid green;" onclick="sortClubs('fraternity')"> Fraternity/Sorority </button>
   
-  <button class="search_btn" onmouseup="refreshList(this)" style="border-left: 6px solid blue;" onclick="sortClubs('sports')"> Sports </button>
+  <button class="search_btn" id="block_sports" onmouseup="refreshList(this)" style="border-left: 6px solid blue;" onclick="sortClubs('sports')"> Sports </button>
   
-  <button class="search_btn" onmouseup="refreshList(this)" style="border-left: 6px solid orange;" onclick="sortClubs('cultural')"> Cultural and Religious </button>
+  <button class="search_btn" id="block_cultural" onmouseup="refreshList(this)" style="border-left: 6px solid orange;" onclick="sortClubs('cultural')"> Cultural and Religious </button>
 </div>
 <!------------------------ BODY PAGE ---------------------->
 <div class="body"> 
@@ -892,7 +892,8 @@ for (j = 0; j < acc.length; j++)
     if (panel.style.display === "block") 
     {
       panel.style.display = "none";
-    } else {
+    } else 
+    {
       panel.style.display = "block";
     }
   }
@@ -957,15 +958,17 @@ function searchClub()
 /* Fixes the bug with searching and switching catg. */
 function disableBtn() 
 {
+  document.getElementById("block_all").disabled = true;
   document.getElementById("block_academic").disabled = true;
   document.getElementById("block_interest").disabled = true;
-  document.getElementById("block_fraternity").disabled = true;                      
+  document.getElementById("block_fraternity").disabled = true;                
   document.getElementById("block_sports").disabled = true;
   document.getElementById("block_cultural").disabled = true;
 }
 
 function enableBtn() 
 {
+  document.getElementById("block_all").disabled = false;
   document.getElementById("block_academic").disabled = false;
   document.getElementById("block_interest").disabled = false;
   document.getElementById("block_fraternity").disabled = false;                       
