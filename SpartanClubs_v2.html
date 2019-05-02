@@ -947,11 +947,8 @@ function searchClub()
         }
         /* Fixes the bug with searching and switching catg. */
         if(document.getElementById("myInput").value == "")
-        {
-          enableBtn();
-        }
-        else
-          disableBtn(); 
+          { enableIcon();   enableBtn();  }
+          else {  disableIcon();  disableBtn(); }
     }
 }
 
@@ -974,6 +971,17 @@ function enableBtn()
   document.getElementById("block_fraternity").disabled = false;                       
   document.getElementById("block_sports").disabled = false;
   document.getElementById("block_cultural").disabled = false;
+}
+
+/* Fixes the bug with searching and switching catg w/ icon. */
+function disableIcon() 
+{
+  document.getElementById("icon_bar").style.display = "none";
+}
+
+function enableIcon() 
+{
+  document.getElementById("icon_bar").style.display = "block";
 }
 
 
