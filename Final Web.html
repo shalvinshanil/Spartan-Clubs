@@ -1,0 +1,1103 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/********************** HEADER SECTION *******************/
+.sjsu_home_header {
+  background: white url("http://www.sjsu.edu/sjsuhome/assets/images/tagline-sjsu-1.gif");
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  font-style: normal;
+  margin: 10px 10px; 
+}
+
+/********************** LINE ****************************/
+.layout_format {
+  width: 100%; 
+  padding: 16px;
+}
+
+/********************** MAIN SECTION *******************/
+.main {
+  padding: 16px;
+  margin-bottom: 30px;
+/*  background-color: #212121; */
+}
+/********************** BODY SECTION *******************/
+.body {
+  padding: 20px;
+  margin-bottom: 10px;
+  margin: auto;
+}
+
+
+/* *********************** SEARCH BUTTON *******************************/
+.search_btn {
+  border: none;
+  outline: none;
+  padding: 10px 14px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  margin: 1px;          /* Space to the right */
+  margin-bottom: 4px;   /* Space at bottom */
+  border-radius: 20%;
+}
+
+.search_btn:hover {
+  background-color: #ddd;
+  transform: scale(1.1);
+}
+
+
+/************************ FILTER BUTTON *******************************/
+.filterDiv {
+float: center;
+  background-color: #3196F3;
+  /*background-color: rgba(62, 199, 233, 0.2);
+  /*background-color: grey;*/
+  width: 80%;
+  line-height: 60px; /* Button Height */
+  text-align: center;
+  display: none; /*** Doesn't work without this ***/
+  font-size: 15px;
+  margin: auto;
+  margin-bottom: 2px;   /* space at bottom */
+  box-shadow: 0 8px 16px 0 rgba(255,255,255,0.6), 0 3px 20px 0 rgba(0,0,0,0.4); 
+  /* Shadow effects */
+   border-radius: 20%;
+   border-left: 16px solid red;
+   
+}
+
+.show {
+  display: block;
+}
+
+.container {
+  margin-top: 20px;
+  overflow: hidden;
+  max-width: 650;
+  margin: auto;
+  width: 100%;
+}
+
+
+/* After a club is active, color of button changes */
+.active, .filterDiv:hover 
+{
+  background-color: gold; /* #ccc */
+  box-shadow: 0 8px 16px 0 rgba(255,255,255,0.6), 0 3px 20px 0 rgba(0,0,0,0.4);
+  transform: scale(1.03); 
+}
+
+/*       ALL CLUB BLOCKS      */
+.panel {
+  padding: 0 18px; /* top & bottom */
+  display: none;
+  background-color: white;
+  overflow: hidden;
+  background: url(http://www.sjsu.edu/sjsuhome/assets/images/bg-left-sjsu-02.png);   
+  background-repeat: no-repeat; 
+  text-align:center;
+  margin-left: 70px;   /* banner alignment */
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  max-width: 350px;
+  margin: auto;
+  align: center;
+  text-align: left;
+  font-family: arial;
+  padding: 0 20px; /* right & left */                                                
+  padding-top: 1px;
+  background-image: linear-gradient(to right, rgba(255,0,2,0), rgba(0,100,190,.5));  
+}
+ 
+  /*       COLOR CARDS        */
+.academic_color 
+{
+  background-image: linear-gradient(to right, rgba(255,0,2,0), rgba(250,0,0,.4));   
+}
+
+.special_interest_color 
+{
+  background-image: linear-gradient(to right, rgba(255,0,2,0), rgba(240,180,0,.4));   
+}
+
+.fraternity_color 
+{
+  background-image: linear-gradient(to right, rgba(255,0,2,0), rgba(63, 166, 42, .7));   
+}
+
+.cultural_color 
+{
+  background-image: linear-gradient(to right, rgba(255,0,2,0), rgba(249, 178, 56,.7));   
+}
+
+.sprots_color 
+{
+  background-image: linear-gradient(to right, rgba(4, 55, 239,0), rgba(63, 166, 42, .7));   
+}
+
+/*************************** CLUB TAG COLOR  *******************************/
+.academic_tag{
+border-left: 6px solid red;
+ border-right: 6px solid red;
+ background-color:hsl(359, 93%, 85%); /* button effect */
+}
+
+.sports_tag{
+border-left: 6px solid blue;
+border-right: 6px solid blue;
+background-color:hsl(192, 100%, 85%);
+}
+
+.special_interest_tag{
+border-left: 6px solid gold;
+border-right: 6px solid gold;
+background-color:hsl(58, 100%, 55%);
+}
+
+.fraternity_tag{
+border-left: 6px solid green;
+border-right: 6px solid green;
+background-color:hsl(120,100%,85%);
+}
+
+.cultural_tag{
+border-left: 6px solid orange;
+border-right: 6px solid orange;
+background-color:hsl(48, 100%, 85%);
+}
+
+
+/*                 Fraternity/Sorority   (GREEN)                 */
+.fraternity_panel {
+  background-image: linear-gradient(to right, rgba(0,50,0,.1), rgba(0,200,0,.1),   rgba(0,50,0,.1)); 
+  /* Standard syntax (must be last) */
+  padding: 18 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;  
+}
+
+.fraternity_clubcard {
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  background-color: white;
+  font-family: arial;
+}
+/*------------------ ACADEMIC CLUBS ------------------*/
+
+
+/*------------------ CLUB INFO ---------------------*/
+
+.card_spacer 
+{
+    padding-bottom: 10px; /* below */
+}
+
+/***** CLUB IMAGE *****/
+.club_image 
+{
+padding: 18px;
+}
+
+
+/* CLUB TITLE */
+.club_title 
+{
+  color: black;
+}
+
+/* MEMBER TITLE */
+.member_title 
+{
+  color: black;
+  padding-left: 20px; /* offset */
+  font-size: 13px; 
+}
+
+.club_purpose
+{
+  text-align: center;
+  padding-right: 80px;
+  padding-left: 80px;
+  font-size: 14px; 
+}
+
+/*********************** ICON BAR ****************************/
+.icon-bar {
+  position: fixed;
+  top: 48%;
+  transform: translateY(0%);
+  transform: translateX(-50%);
+  width: 70px;
+  display: block;
+}
+
+
+.learn_more_button
+{ 
+ padding-bottom: 10px; /* space below the 'learn more' button */
+ padding-left: 20px;  /* offset */
+}
+
+.icon_all  {
+  background-color: white;
+  border-left: 6px solid white;
+  border-radius: 30%;  
+  color: white;
+  margin: 5px;
+}
+
+.icon_academic {
+  background-color: white;
+border-left: 6px solid red;
+  border-radius: 30%;  
+  color: white;
+  margin: 5px;
+}
+
+.icon_special_interest {
+  background-color: white;
+
+  border-radius: 30%;  
+  color: white;
+  margin: 5px;
+  border-left: 6px solid yellow;
+}
+
+.icon_fraternity {
+  background-color: white;
+
+  border-radius: 30%;  
+  color: white;
+  margin: 5px;
+  border-left: 6px solid green;
+}
+
+.icon_sports {
+  background-color: white;
+
+  border-radius: 30%;
+  color: white;
+  margin: 5px;
+  border-left: 6px solid blue;
+}
+
+.icon_cultural {
+  background-color: white;
+  
+  border-radius: 30%;
+  color: white;
+  margin: 5px;
+  border-left: 6px solid orange;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: -1px;
+  text-decoration: none;
+  font-size: 16px;
+  color: black;
+  display: block;
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+#more {display: none;} /* Show more, show less*/
+
+
+/* Float four columns side by side */
+.column {
+  float: right;
+  width: 50%;
+  padding: 0 0px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 1000px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+
+
+
+</style>
+</head>
+<body>
+
+
+
+<body>
+<div class= "layout_format">
+<!------------------------------------------------------------------->
+<!------------------------ HEADER ------------------------>
+<div class="sjsu_home_header">
+
+  <img src="https://cawatercareers.org/wcp/wp-content/uploads/2015/03/sjsu-1024x192.png" width="250" >
+  
+  
+  <hr> </div>
+<!----------------------- HEADER END ---------------------->
+<!--------------------------------------------------------->
+
+
+<!------------------------ MAIN --------------------------->
+<div class="main">
+<div id="myBtnContainer">
+  <button class="search_btn active" id="block_all" onclick="sortClubs('all')"> All </button>
+  
+  <button class="search_btn" id="block_academic" onmouseup="refreshList(this)" style="border-left: 6px solid red;" onclick="sortClubs('academic')">Academic</button>
+  
+  <button class="search_btn" id="block_interest" id="searchButton" onmouseup="refreshList(this)" style="border-left: 6px solid gold;"  onclick="sortClubs('special_interest')">Special Interest </button>
+  
+  <button class="search_btn" id="block_fraternity" onmouseup="refreshList(this)" style="border-left: 6px solid green;" onclick="sortClubs('fraternity')">Greeks</button>
+  
+  <button class="search_btn" id="block_sports" onmouseup="refreshList(this)" style="border-left: 6px solid blue;" onclick="sortClubs('sports')">Sports</button>
+  
+  <button class="search_btn" id="block_cultural" onmouseup="refreshList(this)" style="border-left: 6px solid orange;" onclick="sortClubs('cultural')"> Cultural and Religious</button>
+</div>
+<!------------------------ BODY PAGE ---------------------->
+<div class="body"> 
+
+
+
+
+<!------------------------ ICON BAR ----------------------->
+<div class="icon-bar" id="icon_bar" onmouseup="refreshList(this)">
+  
+<div class="icon_all" 
+onclick="sortClubs('all')" id="block_all_icon" onmouseup="refreshList(this)">
+<img src="https://img.icons8.com/nolan/40/000000/saturation.png">
+</div>
+  
+<div class="icon_academic" 
+onclick="sortClubs('academic')" onmouseup="refreshList(this)">
+<img src="https://img.icons8.com/plasticine/40/000000/design.png">
+</div> 
+  
+<div class="icon_special_interest" 
+onclick="sortClubs('special_interest')" onmouseup="refreshList(this)">
+<img src="https://img.icons8.com/color/40/000000/paint-palette.png">
+</div> 
+  
+<div class="icon_sports" 
+onclick="sortClubs('fraternity')" onmouseup="refreshList(this)">
+<img src="https://img.icons8.com/ultraviolet/40/000000/archery.png">
+</div>
+  
+<div class="icon_fraternity" onclick="sortClubs('sports')" 
+onmouseup="refreshList(this)">
+<img src="https://img.icons8.com/dusk/40/000000/shield.png">
+</div> 
+
+<div class="icon_cultural"
+onclick="sortClubs('cultural')" onmouseup="refreshList(this)">
+<img src="https://img.icons8.com/color/40/000000/pray.png">
+</div> 
+</div> <!------END ICON BAR -------->
+
+
+
+<!----------------------- CLUB LIST BEGIN ----------------->
+<div class="container"> 
+
+
+<!---------------------- SEARCH BAR ------------------->
+<input type="text" id="myInput" onclick="disableBtn()" onkeyup="searchClub()" placeholder="Search for names ..." title="Type in a name">
+
+<hr>
+
+<!---------------------- SEARCH BUTTONS ------------------->
+<ul id="myUL"> 
+
+<!-- Photo Grid -->
+<div class="row"> 
+
+<div class="column">
+
+<!----------------------NEW CLUB------------------------->
+<button class="filterDiv special_interest special_interest_tag"><li><a href="#">Active Minds</a></li></button>
+
+<div class="panel"><!------- Panel ------>
+<div class="club_image">   
+<img src="https://www.activeminds.org/wp-content/uploads/2018/11/logo.png" style="width:50%">
+</div>
+    
+<div class="club_purpose">
+<p>Active Minds is established for the expressed purpose of increasing the awareness of the students, faculty, and staff at San Jose State University
+about the following:</p>
+<!---Show more ---->
+<span id="dots">...</span><span id="more">
+
+<p>Issues surrounding mental health</p>
+<p>Symptoms related to mental health disorders</p>
+<p>mental health resources available both on campus and in the surrounding community</p>
+<p>Removing stigma surrounding mental health disorders so that students will feel more comfortable openly discussing mental-health related issues and seeking help when it is needed</p>
+<p>Promoting a general awareness of holistic health by emphasizing care of both body and
+mind</p>
+<p>Providing students with easy access to information about Eating Disorders, Depression, Bipolar Disorder, Schizophrenia, Post Traumatic Stress Disorder, Anxiety Disorders, and other mental health disorders</p>
+<p>Serving as a liaison between the student body and the mental health community by holding campus-wide activities such as hosting guest speakers, providing informational fact sheets, organizing fundraisers and running national</p>
+
+
+<p>Active Minds programs designed to reduce stigma and raise mental health awareness</p>
+<p>Providing a forum and building an open environment for all students to speak up about
+mental health</p></span>
+<button onclick="showMoreDetails()" id="showMore" style="margin-bottom:20px;">Read more</button>
+
+</div> <!----Purpose END --->
+    
+<div class=" special_interest_color card">   
+   <p class="club_title">Active Minds</p>
+   
+  <div class="member_title">
+    <p><b>President</b> Veena Velury</p>
+    <p><b>Treasurer</b> Zainab Hussain</p>
+    <p> Other(s): Andrea Wong, Daniel Gonzalez</p>
+    <hr> 
+    <p>Time: n/a</p>
+    <p>Location: n/a</p>
+    <p>Email: activemindssjsu@gmail.com</p>
+  </div>
+    
+  <div class ="learn_more_button">
+    <form target="_blank" action="https://www.activeminds.org/">
+    
+    <button type="submit">Learn more</button></form></div>
+  </div> 
+  <div class ="card_spacer"></div>
+</div>
+<!------------------------- END ------------------------->
+
+
+
+<!----------------------NEW CLUB------------------------->
+<!---Academics, Leaders, Mentors, Aiming for Success (A.L.M.A.S.)--->
+<button class="filterDiv academic academic_tag"><li><a href="#">Academics, Leaders, Mentors, Aiming for Success (A.L.M.A.S.)</a></li></button>
+<div class="panel"><!------- Panel ------>
+
+<div class="club_image">   
+<img src="https://s3.amazonaws.com/campus-cloud-image-use/zao1om26fvppcgcsvmcc7swhgrofqbtnak2bezzik5gujk8i5h.jpg" style="width:30%"></div>
+    
+<div class="club_purpose">
+<p>The purpose of A.L.M.A.S is to help underrepresented students on campus and in the community achieve higher education through personal development, cultural awareness, and community involvement. We achieve our goals by creating a network with professionals in the Latinx community. A.L.M.A.S. creates a familiar space for our members to use their individual talents, creativity, and skills to collaborate to successfully execute our events.</p>
+</div> <!----Purpose END --->
+    
+<div class=" academic_color card">   
+  <p class="club_title">Academics, Leaders, Mentors, Aiming for Success (A.L.M.A.S.)</p>
+   
+  <div class="member_title">
+    <p><b>President</b> Edith Valle</p>
+    <p><b>Treasurer</b> Jennifer Rodriguez-Alonso</p>
+    <p> Other(s): Sofia Hernandez</p>
+    <hr> 
+    <p>Time: n/a</p>
+    <p>Email: n/a</p>
+  </div>
+    
+    <div class ="learn_more_button">
+      <form target="_blank" action="https://sjsu.my.campusapp.com/#/clubs/47409">
+      <button type="submit">Learn more</button></form></div>
+  </div> 
+   <div class ="card_spacer"></div>
+</div>
+<!------------------------- END ------------------------->
+
+
+
+<!----------------------NEW CLUB------------------------->
+<!---Alpha Tau Delta--->
+<button class="filterDiv fraternity fraternity_tag"><li><a href="#">Alpha Tau Delta</a></li></button>
+<div class="panel"><!------- Panel ------>
+
+<div class="club_image">   
+<img src="https://s3.amazonaws.com/campus-cloud-image-use/sv3n8x2opr2miskf7t2aezhj5dklegd001tp3oiiiw7l4udp1n.jpg" style="width:30%"></div>
+    
+<div class="club_purpose">
+<p>The purpose of Alpha Rho chapter shall be to affirm sound nursing standards and to promote the nursing profession through intellectual enrichment, personal growth and individual performance of its members to serve their communities while uniting them in a bond of friendship.</p>
+
+
+</div> <!----Purpose END --->
+    
+<div class=" fraternity_color card">   
+  <p class="club_title">Alpha Tau Delta</p>
+   
+  <div class="member_title">
+    <p><b>President</b> Christopher Cabana</p>
+    <p><b>Treasurer</b> Vanessa Urbina</p>
+    <p><b>Advisor</b> Arlene Spilker</p>
+    <p> Other(s): Nathaniel Signorotti, Victoria Melgoza</p>
+    <hr> 
+    <p>Time: n/a</p>
+    <p>Email: n/a</p>
+  </div>
+    
+    <div class ="learn_more_button">
+      <form target="_blank" action="https://sjsu.my.campusapp.com/#/clubs/47391">
+      <button type="submit">Learn more</button></form></div>
+  </div> 
+   <div class ="card_spacer"></div>
+</div>
+<!------------------------- END ------------------------->
+
+
+
+<!----------------------NEW CLUB------------------------->
+<!----Amateur Radio Club SJSU ---->
+<button class="filterDiv special_interest special_interest_tag"><li><a href="#">Amateur Radio Club SJSU</a></li></button>
+<div class="panel"><!------- Panel ------>
+
+<div class="club_image">   
+<img src="https://d3n756dfoku5i3.cloudfront.net/oRdm3GC4iEkVH0tKA2Vu9ZRXCDmAdCvI.png" style="width:25%"></div>
+    
+<div class="club_purpose">
+<p>The purpose of the Amateur Radio Club is to provide a resource for emergency communications to SJSU and the community, to train operators and test equipment and procedures by having drills and encouraging use of radios, to assist members in obtaining Amateur Radio licenses and equipment, to encourage installation and use of amateur radio stations on campus, to promote technical advancement and experimentation of members, to educate students, faculty, staff and the community about Amateur Radio, and to provide opportunities for socialization for members.</p>
+
+</div> <!----Purpose END --->
+    
+<div class=" special_interest_color card">   
+   <p class="club_title">Amateur Radio Club SJSU</p>
+   
+  <div class="member_title">
+    <p><b>President</b> Aimee Boun, Renee Kimbrough</p>
+    <p><b>Vice President</b> Bethany Kuo, Tai Dao</p>
+    <p><b>Treasurer</b> Daniel Lienhart</p>
+    <p><b>Fundraising Coordinator</b> Lindsay Bui</p>
+    <p><b>ACE IT Coordinator</b> Manpreet Dhillon</p>
+    <p><b>Advisor</b> Morris Jones</p>
+    <hr> 
+    <p>Time: n/a</p>
+    <p>Email: n/a</p>
+  </div>
+    
+    <div class ="learn_more_button">
+      <form target="_blank" action="https://sjsu.my.campusapp.com/#/clubs/48183">
+      <button type="submit">Learn more</button></form></div>
+  </div> 
+   <div class ="card_spacer"></div>
+</div>
+<!------------------------- END ------------------------->
+
+
+
+<!----------------------NEW CLUB------------------------->
+<!---AkbayanSJSU--->
+<button class="filterDiv cultural cultural_tag"><li><a href="#">AkbayanSJSU</a></li></button>
+<div class="panel"><!------- Panel ------>
+
+<div class="club_image">   
+<img src="https://d3n756dfoku5i3.cloudfront.net/WXikn3rTzHdiQ7uacnSrv8A60bnbe099.png" style="width:30%"></div>
+    
+<div class="club_purpose">
+<p>Purposes of this organization are: 
+To promote by close contact an exchange of ideas and experiences to become socially, culturally, and educationally involved with fellow students who share common interests in Pilipino/Pilipino American culture and heritage. </p>
+ 
+<p>To establish a better understanding and appreciation of the Pilipino/Pilipino American Community and its youth as a whole. </p>
+ 
+<p>To encourage all efforts and activities in connection with “Akbayan.”</p>
+
+</div> <!----Purpose END --->
+    
+<div class=" cultural_color card">   
+  <p class="club_title">AkbayanSJSU</p>
+   
+  <div class="member_title">
+    <p><b>President</b> Camille Kae Valerio</p>
+    <p><b>Vice President</b> Malia Campos</p>
+    <p><b>Treasurer</b> Serene Chloe Agdipa</p>
+    <p> Other(s): NAME</p>
+    <hr> 
+    <p>Time: TIME</p>
+    <p>Email: contact@akbayansjsu.org</p>
+  </div>
+    
+    <div class ="learn_more_button">
+      <form target="_blank" action="http://www.akbayansjsu.org">
+      <button type="submit">Learn more</button></form></div>
+  </div> 
+   <div class ="card_spacer"></div>
+</div>
+<!------------------------- END ------------------------->
+
+
+
+</div>
+<div class="column">
+
+
+
+<!----------------------NEW CLUB------------------------->
+<!---Amateur Radio Club SJSU--->
+<button class="filterDiv academic academic_tag"><li><a href="#">Academic Scholars Association</a></li></button>
+<div class="panel"><!------- Panel ------>
+
+<div class="club_image">   
+<img src="https://s3.amazonaws.com/campus-cloud-image-use/ltp0ldere74lusorop0qpi9ep19kwttjztz0tkyd908amd6d50.jpg" style="width:50%"></div>
+    
+<div class="club_purpose">
+<p>Help foster innovative thinkers on campus that strive to become mentors, helping out in their communities while attaining a solid academic/social foundation.</p>
+
+</div> <!----Purpose END --->
+    
+<div class=" academic_color card">   
+  <p class="club_title">Academic Scholars Association</p>
+   
+  <div class="member_title">
+    <p><b>President</b> Rana Elbakkay</p>
+    <p><b>Treasurer</b> Ali Nour</p>
+    <p> Other(s): Edwin Reyes</p>
+    <hr> 
+    <p>Time: n/a</p>
+    <p>Email: n/a</p>
+  </div>
+    
+    <div class ="learn_more_button">
+      <form target="_blank" action="https://sjsu.my.campusapp.com/#/clubs/49229">
+      <button type="submit">Learn more</button></form></div>
+  </div> 
+   <div class ="card_spacer"></div>
+</div>
+<!------------------------- END ------------------------->
+
+
+<!----------------------NEW CLUB------------------------->
+<!---Women's Water Polo--->
+<button class="filterDiv sports sports_tag"><li><a href="#">Women's Water Polo</a></li></button>
+<div class="panel"><!------- Panel ------>
+
+<div class="club_image">   
+<img src="https://s3.amazonaws.com/campus-cloud-image-use/j8osumrgpc00tnn4cw0itto81dahkcen7h54l7wra065vtj9kn.jpg" style="width:30%"></div>
+    
+<div class="club_purpose">
+<p>Competitive and fun club sport.</p>
+
+</div> <!----Purpose END --->
+    
+<div class=" sports_color card">   
+  <p class="club_title">Women's Water Polo</p>
+   
+  <div class="member_title">
+    <p><b>C0-President</b> Abbie McGarvey</p>
+    <p><b>Treasurer</b> Laila Akhavi</p>
+    <p><b>Advisor</b> Kristine Adams</p>
+    <hr> 
+    <p>Time: n/a</p>
+    <p>Email: n/a</p>
+  </div>
+    
+    <div class ="learn_more_button">
+      <form target="_blank" action="https://sjsu.my.campusapp.com/#/clubs/47424">
+      <button type="submit">Learn more</button></form></div>
+  </div> 
+   <div class ="card_spacer"></div>
+</div>
+<!------------------------- END ------------------------->
+
+
+<!----------------------NEW CLUB------------------------->
+<!---AIESEC--->
+<button class="filterDiv special_interest special_interest_tag"><li><a href="#">AIESEC</a></li></button>
+<div class="panel"><!------- Panel ------>
+
+<div class="club_image">   
+<img src="https://s3.amazonaws.com/campus-cloud-image-use/xuf4z2t9039rqk7unclwtc67q4ym4k5z4po4ja7dzhax47lfq0.png" style="width:30%"></div>
+    
+<div class="club_purpose">
+<p>Promoting cross cultural understanding and travel through volunteering and interning while developing youth leadership in students.</p>
+
+</div> <!----Purpose END --->
+    
+<div class=" special_interest_color card">   
+  <p class="club_title">AIESEC</p>
+   
+  <div class="member_title">
+    <p><b>President</b> Phuoc-Anh Mai, Sravanthi Prattipati</p>
+    <p><b>Treasurer</b> James Shoenhair</p>
+    <hr> 
+    <p>Time: n/a</p>
+    <p>Email: n/a</p>
+  </div>
+    
+    <div class ="learn_more_button">
+      <form target="_blank" action="https://sjsu.my.campusapp.com/#/clubs/47430">
+      <button type="submit">Learn more</button></form></div>
+  </div> 
+   <div class ="card_spacer"></div>
+</div>
+<!------------------------- END ------------------------->
+
+<!----------------------NEW CLUB------------------------->
+<!---Alpha Kappa Delta Phi Sorority, Inc.--->
+<button class="filterDiv fraternity fraternity_tag"><li><a href="#">Alpha Kappa Delta Phi Sorority, Inc.</a></li></button>
+<div class="panel"><!------- Panel ------>
+
+<div class="club_image">   
+<img src="https://d3n756dfoku5i3.cloudfront.net/5tYL7g9r3P9AtkzWxQgOE9Ce4unFhO02.png" style="width:30%"></div>
+    
+<div class="club_purpose">
+<p>Alpha Kappa Delta Phi Sorority, Inc. fosters the making of successful leaders by assisting and challenging our members to reach their maximum potential. We strive to maintain the highest levels of integrity and innovation in the promotion of sisterhood, philanthropy, scholastic excellence, and Asian-Awareness in the community while creating lifelong relationships.</p>
+
+</div> <!----Purpose END --->
+    
+<div class=" fraternity_color card">   
+  <p class="club_title">Alpha Kappa Delta Phi Sorority, Inc.</p>
+   
+  <div class="member_title">
+    <p> Members(s): n/a</p>
+    <hr> 
+    <p>Time: n/a</p>
+    <p>Email: n/a</p>
+  </div>
+    
+    <div class ="learn_more_button">
+      <form target="_blank" action="https://sjsu.my.campusapp.com/#/clubs/45632">
+      <button type="submit">Learn more</button></form></div>
+  </div> 
+   <div class ="card_spacer"></div>
+</div>
+<!------------------------- END ------------------------->
+
+
+<!----------------------NEW CLUB------------------------->
+<!---Men's Club Soccer--->
+<button class="filterDiv sports sports_tag"><li><a href="#">Men's Club Soccer</a></li></button>
+<div class="panel"><!------- Panel ------>
+
+<div class="club_image">   
+<img src="https://d3n756dfoku5i3.cloudfront.net/oRdm3GC4iEkVH0tKA2Vu9ZRXCDmAdCvI.png" style="width:0%"></div>
+    
+<div class="club_purpose">
+<p>To play soccer with fellow SJSU students and compete against other teams.</p>
+
+</div> <!----Purpose END --->
+    
+<div class=" sports_color card">   
+  <p class="club_title">Men's Club Soccer</p>
+   
+  <div class="member_title">
+    <p><b>President</b> Sandro Sallenbach</p>
+    <p><b>Treasurer</b> Antony Ambriz</p>
+    <hr> 
+    <p>Time: n/a</p>
+    <p>Email: n/a</p>
+  </div>
+    
+    <div class ="learn_more_button">
+      <form target="_blank" action="https://sjsu.my.campusapp.com/#/clubs/48639">
+      <button type="submit">Learn more</button></form></div>
+  </div> 
+   <div class ="card_spacer"></div>
+</div>
+<!------------------------- END ------------------------->
+
+</div> <!------COLUM END------>
+
+</div>
+
+
+</ul> 
+
+<!-------- END CLUB LIST ----------->
+
+<p></p>
+</div> 
+<!-------------------------- END Container ------------------------->
+
+<script>
+
+sortClubs("all")
+function sortClubs(c) 
+{
+  var clubsCategory, sortIndex;
+
+  clubsCategory = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  for (sortIndex = 0; sortIndex < clubsCategory.length; sortIndex++) 
+  {
+    hideClubs(clubsCategory[sortIndex], "show");
+    if (clubsCategory[sortIndex].className.indexOf(c) > -1)	showClubs(clubsCategory[sortIndex], "show");
+  }
+}
+
+
+function showClubs(currentClub, actionToShow) 
+{
+  var clubIndex, club, checkClub;
+  club = currentClub.className.split(" ");
+  checkClub = actionToShow.split(" ");
+  
+  for (clubIndex = 0; clubIndex < checkClub.length; clubIndex++) 
+  {
+    if (club.indexOf(checkClub[clubIndex]) == -1) 
+    {
+        currentClub.className += " " + checkClub[clubIndex];
+    }
+  }
+}
+
+
+function hideClubs(currentCLub, actionShow) 
+{
+  var hideIndex, club, currentClub;
+  club = currentCLub.className.split(" ");
+  currentClub = actionShow.split(" ");
+  
+  for (hideIndex = 0; hideIndex < currentClub.length; hideIndex++) 
+  {
+    while (club.indexOf(currentClub[hideIndex]) > -1) 
+    {
+      club.splice(club.indexOf(currentClub[hideIndex]), 1);     
+    }
+  }
+  /* To hide unvielent types while sorting catg.*/
+  currentCLub.className = club.join(" "); 
+}
+
+
+// selected clubs: highlight catg
+var selectedCatg = document.getElementById("myBtnContainer");
+var btns = selectedCatg.getElementsByClassName("search_btn");
+
+for (var index = 0; index < btns.length; index++) 
+{
+  btns[index].addEventListener("click", function() 
+  {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+    
+  });
+}
+
+
+var acc = document.getElementsByClassName("filterDiv");
+var j;
+
+for (j = 0; j < acc.length; j++) 
+{
+  acc[j].addEventListener("click", 
+  function() 
+  {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling; 
+    
+    if (panel.style.display === "block") 
+    {
+      panel.style.display = "none";
+    } else 
+    {
+      panel.style.display = "block";
+    }
+  }
+  );
+}
+
+
+
+
+
+
+function refreshList(obj) {
+   
+  var club = document.getElementsByClassName("panel");
+  var clubCatg = document.getElementsByClassName("filterDiv");
+  var clubIndex;
+
+  for (clubIndex = 0; clubIndex < club.length; clubIndex++) 
+  {
+      if (club[clubIndex].style.display === "block") 
+        {
+        <!---Clear active button color--->
+        clubCatg[clubIndex].classList.toggle("active");  
+        club[clubIndex].style.display = "none";
+        }
+  }
+}
+
+
+function searchClub() 
+{
+    var input, filter, ul, li, a, i, txtValue;
+    var clubsCategory;
+    
+    clubsCategory = document.getElementsByClassName("filterDiv");
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+
+    for (i = 0; i < li.length; i++) 
+    {
+    
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        
+        if (txtValue.toUpperCase().indexOf(filter) > -1) 
+        {
+            li[i].style.display = "";
+      		showClubs(clubsCategory[i], "show"); /* modified */
+   
+        } 
+        else 
+        {
+            li[i].style.display = "none";
+            hideClubs(clubsCategory[i], "show");  /* modified */
+        }
+        /* Fixes the bug with searching and switching catg. */
+      	if(document.getElementById("myInput").value == "")
+        	{	enableIcon(); 	enableBtn();	}
+        	else { 	disableIcon(); 	disableBtn(); }
+    }
+}
+
+
+function testing() {
+
+  /*alert(document.getElementById("icon_bar").style.display);*/
+  var w = window.innerWidth;
+  var h = window.innerHeight;
+  document.getElementById("demo").innerHTML = "Width: " + w + "<br>Height: " + h;
+
+}
+
+function disableBtn() 
+{
+	document.getElementById("block_all_icon").disabled = true;
+  document.getElementById("block_all").disabled = true;
+  document.getElementById("block_academic").disabled = true;
+  document.getElementById("block_interest").disabled = true;
+  document.getElementById("block_fraternity").disabled = true;   		           document.getElementById("block_sports").disabled = true;
+  document.getElementById("block_cultural").disabled = true;
+}
+
+function enableBtn() 
+{
+  document.getElementById("block_all").disabled = false;
+  document.getElementById("block_academic").disabled = false;
+  document.getElementById("block_interest").disabled = false;
+  document.getElementById("block_fraternity").disabled = false;   		           document.getElementById("block_sports").disabled = false;
+  document.getElementById("block_cultural").disabled = false;
+}
+
+/* Fixes the bug with searching and switching catg w/ icon. */
+function disableIcon() 
+{
+  document.getElementById("icon_bar").style.display = "none";
+}
+
+function enableIcon() 
+{
+  document.getElementById("icon_bar").style.display = "block";
+}
+
+
+
+</script>
+
+
+
+
+
+<script>
+function showMoreDetails() 
+{
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("showMore");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
+
+
+
+
+
+</div> <!---BODY_PAGE END--->
+<!-------------------------------------------------------------------->
+
+</div> <!---MAIN_PAGE END--->
+<!-------------------------------------------------------------------->
+
+</div> <!---layout_format--->
+<!-------------------------------------------------------------------->
+
+</body>
+</html> 
+
+
+
+
