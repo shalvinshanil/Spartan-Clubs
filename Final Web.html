@@ -1,7 +1,6 @@
-
-
 <!DOCTYPE html>
 <html>
+<title>Spartan Clubs</title>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +13,7 @@
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Arial", Helvetica, sans-serif;
 }
 
 /********************** HEADER SECTION *******************/
@@ -22,8 +21,9 @@ body {
   background: white url("http://www.sjsu.edu/sjsuhome/assets/images/tagline-sjsu-1.gif");
   background-position: bottom right;
   background-repeat: no-repeat;
-  font-style: normal;
-  margin: 10px 10px; 
+  /*font-style: normal;*/
+  margin: 10px 10px;
+  width: 100%;
 }
 
 /********************** LINE ****************************/
@@ -36,7 +36,7 @@ body {
 .main {
   padding: 16px;
   margin-bottom: 30px;
-/*  background-color: #212121; */
+  background-color: #FFFFFF;
 }
 /********************** BODY SECTION *******************/
 .body {
@@ -46,21 +46,21 @@ body {
 }
 
 
-/* *********************** SEARCH BUTTON *******************************/
+/* *********************** TOP BUTTONS *******************************/
 .search_btn {
   border: none;
   outline: none;
   padding: 10px 14px;
   background-color: #f1f1f1;
   cursor: pointer;
-  margin: 1px;          /* Space to the right */
-  margin-bottom: 4px;   /* Space at bottom */
-  border-radius: 20%;
+  margin-right: 10px;          /* Space to the right */
+  margin-bottom: 10px;   /* Space at bottom */
+  border-radius: 10%;
 }
 
 .search_btn:hover {
   background-color: #ddd;
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 
@@ -68,20 +68,17 @@ body {
 .filterDiv {
 float: center;
   background-color: #3196F3;
-  /*background-color: rgba(62, 199, 233, 0.2);
-  /*background-color: grey;*/
   width: 80%;
   line-height: 60px; /* Button Height */
   text-align: center;
-  display: none; /*** Doesn't work without this ***/
+  display: none; /* Doesn't work without this */
   font-size: 15px;
   margin: auto;
-  margin-bottom: 2px;   /* space at bottom */
-  box-shadow: 0 8px 16px 0 rgba(255,255,255,0.6), 0 3px 20px 0 rgba(0,0,0,0.4); 
+  margin-bottom: 15px;   /* space at bottom */
+  /*box-shadow: 0 8px 16px 0 rgba(255,255,255,0.6), 0 3px 20px 0 rgba(0,0,0,0.4);*/ 
   /* Shadow effects */
-   border-radius: 20%;
-   border-left: 16px solid red;
-   
+   border-radius: 9%;
+   border-left: 1px solid red; 
 }
 
 .show {
@@ -89,7 +86,7 @@ float: center;
 }
 
 .container {
-  margin-top: 20px;
+  margin-top: 20px; 
   overflow: hidden;
   max-width: 650;
   margin: auto;
@@ -114,7 +111,7 @@ float: center;
   background: url(http://www.sjsu.edu/sjsuhome/assets/images/bg-left-sjsu-02.png);   
   background-repeat: no-repeat; 
   text-align:center;
-  margin-left: 70px;   /* banner alignment */
+  margin-left: 65px;   /* banner alignment */
 }
 
 .card {
@@ -123,69 +120,64 @@ float: center;
   margin: auto;
   align: center;
   text-align: left;
-  font-family: arial;
+  font-family: "Arial", Times New Roman,serif;
   padding: 0 20px; /* right & left */                                                
   padding-top: 1px;
   background-image: linear-gradient(to right, rgba(255,0,2,0), rgba(0,100,190,.5));  
 }
- 
-  /*       COLOR CARDS        */
-.academic_color 
-{
-  background-image: linear-gradient(to right, rgba(255,0,2,0), rgba(250,0,0,.4));   
+
+/*       COLOR CARDS        */
+
+.academic_color {
+	background-image: linear-gradient(to right, rgba(255,0,2,0), rgba(250,0,0,.4));   
 }
 
-.special_interest_color 
-{
-  background-image: linear-gradient(to right, rgba(255,0,2,0), rgba(240,180,0,.4));   
+.special_interest_color {
+	background-image: linear-gradient(to right, rgba(255,0,2,0), rgba(240,180,0,.4));   
 }
 
-.fraternity_color 
-{
-  background-image: linear-gradient(to right, rgba(255,0,2,0), rgba(63, 166, 42, .7));   
+.fraternity_color {
+	background-image: linear-gradient(to right, rgba(255,0,2,0), rgba(63, 166, 42, .7));   
 }
 
-.cultural_color 
-{
-  background-image: linear-gradient(to right, rgba(255,0,2,0), rgba(249, 178, 56,.7));   
+.cultural_color {
+	background-image: linear-gradient(to right, rgba(255,0,2,0), rgba(249, 178, 56,.7));   
 }
 
-.sprots_color 
-{
-  background-image: linear-gradient(to right, rgba(4, 55, 239,0), rgba(63, 166, 42, .7));   
+.sports_color {
+	background-image: linear-gradient(to right, rgba(4, 55, 239,0), rgba(63, 166, 42, .7));   
 }
 
 /*************************** CLUB TAG COLOR  *******************************/
-.academic_tag{
-border-left: 6px solid red;
- border-right: 6px solid red;
- background-color:hsl(359, 93%, 85%); /* button effect */
+.academic_tag {
+	border-left: 6px solid red;
+	border-right: 6px solid red;
+	background-color:hsl(359, 93%, 85%); /* button effect */
 }
 
-.sports_tag{
-border-left: 6px solid blue;
-border-right: 6px solid blue;
-background-color:hsl(192, 100%, 85%);
+.sports_tag {
+	border-left: 6px solid blue;
+	border-right: 6px solid blue;
+	background-color:hsl(192, 100%, 85%);
 }
 
-.special_interest_tag{
-border-left: 6px solid gold;
-border-right: 6px solid gold;
-background-color:hsl(58, 100%, 55%);
+.special_interest_tag {
+	border-left: 6px solid gold;
+	border-right: 6px solid gold;
+	background-color:hsl(58, 100%, 55%);
 }
 
-.fraternity_tag{
-border-left: 6px solid green;
-border-right: 6px solid green;
-background-color:hsl(120,100%,85%);
+.fraternity_tag {
+	border-left: 6px solid green;
+	border-right: 6px solid green;
+	background-color:hsl(120,100%,85%);
 }
 
-.cultural_tag{
-border-left: 6px solid orange;
-border-right: 6px solid orange;
-background-color:hsl(48, 100%, 85%);
+.cultural_tag {
+	border-left: 6px solid orange;
+	border-right: 6px solid orange;
+	background-color:hsl(48, 100%, 85%);
 }
-
 
 /*                 Fraternity/Sorority   (GREEN)                 */
 .fraternity_panel {
@@ -209,34 +201,29 @@ background-color:hsl(48, 100%, 85%);
 
 /*------------------ CLUB INFO ---------------------*/
 
-.card_spacer 
-{
+.card_spacer {
     padding-bottom: 10px; /* below */
 }
 
 /***** CLUB IMAGE *****/
-.club_image 
-{
-padding: 18px;
+.club_image {
+	padding: 18px;
 }
 
 
 /* CLUB TITLE */
-.club_title 
-{
+.club_title {
   color: black;
 }
 
 /* MEMBER TITLE */
-.member_title 
-{
+.member_title {
   color: black;
   padding-left: 20px; /* offset */
   font-size: 13px; 
 }
 
-.club_purpose
-{
+.club_purpose {
   text-align: center;
   padding-right: 80px;
   padding-left: 80px;
@@ -246,7 +233,7 @@ padding: 18px;
 /*********************** ICON BAR ****************************/
 .icon-bar {
   position: fixed;
-  top: 48%;
+  top: 45%;
   transform: translateY(0%);
   transform: translateX(-50%);
   width: 70px;
@@ -254,62 +241,57 @@ padding: 18px;
 }
 
 
-.learn_more_button
-{ 
- padding-bottom: 10px; /* space below the 'learn more' button */
- padding-left: 20px;  /* offset */
+.learn_more_button {
+	padding-bottom: 10px; /* space below the 'learn more' button */
+	padding-left: 20px;  /* offset */
 }
 
-.icon_all  {
-  background-color: white;
-  border-left: 6px solid white;
-  border-radius: 30%;  
-  color: white;
-  margin: 5px;
+.icon_all {
+	background-color: white;
+	border-left: 6px solid white;
+	border-radius: 20%;
+	color: white;
+	margin: 5px;
 }
 
 .icon_academic {
-  background-color: white;
-border-left: 6px solid red;
-  border-radius: 30%;  
-  color: white;
-  margin: 5px;
+	background-color: white;
+	border-left: 6px solid red;
+	border-radius: 20%;
+	color: white;
+	margin: 5px;
 }
 
 .icon_special_interest {
-  background-color: white;
-
-  border-radius: 30%;  
-  color: white;
-  margin: 5px;
-  border-left: 6px solid yellow;
+	background-color: white;
+	border-radius: 20%;
+	color: white;
+	margin: 5px;
+	border-left: 6px solid yellow;
 }
 
 .icon_fraternity {
-  background-color: white;
-
-  border-radius: 30%;  
-  color: white;
-  margin: 5px;
-  border-left: 6px solid green;
+	background-color: white;
+	border-radius: 20%;
+	color: white;
+	margin: 5px;
+	border-left: 6px solid green;
 }
 
 .icon_sports {
-  background-color: white;
-
-  border-radius: 30%;
-  color: white;
-  margin: 5px;
-  border-left: 6px solid blue;
+	background-color: white;
+	border-radius: 20%;
+	color: white;
+	margin: 5px;
+	border-left: 6px solid blue;
 }
 
 .icon_cultural {
-  background-color: white;
-  
-  border-radius: 30%;
-  color: white;
-  margin: 5px;
-  border-left: 6px solid orange;
+	background-color: white;
+	border-radius: 20%;
+	color: white;
+	margin: 5px;
+	border-left: 6px solid orange;
 }
 
 * {
@@ -317,55 +299,59 @@ border-left: 6px solid red;
 }
 
 #myInput {
-  background-image: url('/css/searchicon.png');
-  background-position: 10px 12px;
-  background-repeat: no-repeat;
-  width: 100%;
-  font-size: 16px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
+	background-image: url('/css/searchicon.png');
+	background-position: 10px 12px;
+	background-repeat: no-repeat;
+	width: 100%;
+	font-size: 16px;
+	padding: 12px 20px 12px 40px;
+	border: 1px solid #ddd;
+	margin-bottom: 12px;
 }
 
 #myUL {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
 }
 
 #myUL li a {
-  border: 1px solid #ddd;
-  margin-top: -1px; /* Prevent double borders */
-  background-color: #f6f6f6;
-  padding: -1px;
-  text-decoration: none;
-  font-size: 16px;
-  color: black;
-  display: block;
+	border: 1px solid #ddd;
+	margin-top: -1px; /* Prevent double borders */
+	background-color: #f6f6f6;
+	padding: -1px;
+	text-decoration: none;
+	font-size: 16px;
+	color: black;
+	display: block;
 }
 
 #myUL li a:hover:not(.header) {
-  background-color: #eee;
+	background-color: #eee;
 }
 
-#more {display: none;} /* Show more, show less*/
+#more {
+	display: none;
+} /* Show more, show less*/
 
 
 /* Float four columns side by side */
 .column {
-  float: right;
-  width: 50%;
-  padding: 0 0px;
+	float: right;
+	width: 50%;
+	padding: 0 0px;
 }
 
 /* Remove extra left and right margins, due to padding */
-.row {margin: 0 -5px;}
+.row {
+	margin: 0 -5px;
+}
 
 /* Clear floats after the columns */
 .row:after {
-  content: "";
-  display: table;
-  clear: both;
+	content: "";
+	display: table;
+	clear: both;
 }
 
 /* Responsive columns */
@@ -384,9 +370,6 @@ border-left: 6px solid red;
   background-color: #f1f1f1;
 }
 
-
-
-
 </style>
 </head>
 <body>
@@ -399,10 +382,10 @@ border-left: 6px solid red;
 <!------------------------ HEADER ------------------------>
 <div class="sjsu_home_header">
 
-  <img src="https://cawatercareers.org/wcp/wp-content/uploads/2015/03/sjsu-1024x192.png" width="250" >
+  <img src="https://cawatercareers.org/wcp/wp-content/uploads/2015/03/sjsu-1024x192.png" width=25%>
   
   
-  <hr> </div>
+<hr></div>
 <!----------------------- HEADER END ---------------------->
 <!--------------------------------------------------------->
 
@@ -410,13 +393,13 @@ border-left: 6px solid red;
 <!------------------------ MAIN --------------------------->
 <div class="main">
 <div id="myBtnContainer">
-  <button class="search_btn active" id="block_all" onclick="sortClubs('all')"> All </button>
+  <button class="search_btn active" id="block_all" onclick="sortClubs('all')">All</button>
   
   <button class="search_btn" id="block_academic" onmouseup="refreshList(this)" style="border-left: 6px solid red;" onclick="sortClubs('academic')">Academic</button>
   
-  <button class="search_btn" id="block_interest" id="searchButton" onmouseup="refreshList(this)" style="border-left: 6px solid gold;"  onclick="sortClubs('special_interest')">Special Interest </button>
+  <button class="search_btn" id="block_interest" id="searchButton" onmouseup="refreshList(this)" style="border-left: 6px solid gold;"  onclick="sortClubs('special_interest')">Special Interest</button>
   
-  <button class="search_btn" id="block_fraternity" onmouseup="refreshList(this)" style="border-left: 6px solid green;" onclick="sortClubs('fraternity')">Greeks</button>
+  <button class="search_btn" id="block_fraternity" onmouseup="refreshList(this)" style="border-left: 6px solid green;" onclick="sortClubs('fraternity')">Greek</button>
   
   <button class="search_btn" id="block_sports" onmouseup="refreshList(this)" style="border-left: 6px solid blue;" onclick="sortClubs('sports')">Sports</button>
   
@@ -445,20 +428,20 @@ onclick="sortClubs('academic')" onmouseup="refreshList(this)">
 onclick="sortClubs('special_interest')" onmouseup="refreshList(this)">
 <img src="https://img.icons8.com/color/40/000000/paint-palette.png">
 </div> 
-  
-<div class="icon_sports" 
-onclick="sortClubs('fraternity')" onmouseup="refreshList(this)">
-<img src="https://img.icons8.com/ultraviolet/40/000000/archery.png">
+
+<div class="icon_fraternity" onclick="sortClubs('fraternity')" 
+onmouseup="refreshList(this)">
+<img src="https://img.icons8.com/dusk/40/000000/alpha.png">
 </div>
   
-<div class="icon_fraternity" onclick="sortClubs('sports')" 
-onmouseup="refreshList(this)">
-<img src="https://img.icons8.com/dusk/40/000000/shield.png">
-</div> 
+<div class="icon_sports" 
+onclick="sortClubs('sports')" onmouseup="refreshList(this)">
+<img src="https://img.icons8.com/ultraviolet/40/000000/beach-soccer.png">
+</div>
 
 <div class="icon_cultural"
 onclick="sortClubs('cultural')" onmouseup="refreshList(this)">
-<img src="https://img.icons8.com/color/40/000000/pray.png">
+<img src="https://img.icons8.com/color/40/000000/pagoda.png">
 </div> 
 </div> <!------END ICON BAR -------->
 
@@ -469,7 +452,10 @@ onclick="sortClubs('cultural')" onmouseup="refreshList(this)">
 
 
 <!---------------------- SEARCH BAR ------------------->
-<input type="text" id="myInput" onclick="disableBtn()" onkeyup="searchClub()" placeholder="Search for names ..." title="Type in a name">
+<!-- <input type="text" id="myInput" onclick="disableBtn()" onkeyup="searchClub()" placeholder="Search for names ..." title="Type in a name"> -->
+<input type="text" id="myInput" onkeyup="searchClub()" placeholder="Search for names ..." title="Type in a name">
+<!-- removed on click disable -->
+
 
 <hr>
 
@@ -490,7 +476,7 @@ onclick="sortClubs('cultural')" onmouseup="refreshList(this)">
 </div>
     
 <div class="club_purpose">
-<p>Active Minds is established for the expressed purpose of increasing the awareness of the students, faculty, and staff at San Jose State University
+<p>Active Minds is established for the purpose of increasing the awareness of the students, faculty, and staff at San Jose State University
 about the following:</p>
 <!---Show more ---->
 <span id="dots">...</span><span id="more">
@@ -505,7 +491,8 @@ mind</p>
 <p>Serving as a liaison between the student body and the mental health community by holding campus-wide activities such as hosting guest speakers, providing informational fact sheets, organizing fundraisers and running national</p>
 
 
-<p>Active Minds programs designed to reduce stigma and raise mental health awareness</p>
+<p>Active Minds programs are designed to:</p>
+<p>Reduce stigma and raise mental health awareness</p>
 <p>Providing a forum and building an open environment for all students to speak up about
 mental health</p></span>
 <button onclick="showMoreDetails()" id="showMore" style="margin-bottom:20px;">Read more</button>
@@ -516,8 +503,8 @@ mental health</p></span>
    <p class="club_title">Active Minds</p>
    
   <div class="member_title">
-    <p><b>President</b> Veena Velury</p>
-    <p><b>Treasurer</b> Zainab Hussain</p>
+    <p><b>President:</b> Veena Velury</p>
+    <p><b>Treasurer:</b> Zainab Hussain</p>
     <p> Other(s): Andrea Wong, Daniel Gonzalez</p>
     <hr> 
     <p>Time: n/a</p>
@@ -552,8 +539,8 @@ mental health</p></span>
   <p class="club_title">Academics, Leaders, Mentors, Aiming for Success (A.L.M.A.S.)</p>
    
   <div class="member_title">
-    <p><b>President</b> Edith Valle</p>
-    <p><b>Treasurer</b> Jennifer Rodriguez-Alonso</p>
+    <p><b>President:</b> Edith Valle</p>
+    <p><b>Treasurer:</b> Jennifer Rodriguez-Alonso</p>
     <p> Other(s): Sofia Hernandez</p>
     <hr> 
     <p>Time: n/a</p>
@@ -588,9 +575,9 @@ mental health</p></span>
   <p class="club_title">Alpha Tau Delta</p>
    
   <div class="member_title">
-    <p><b>President</b> Christopher Cabana</p>
-    <p><b>Treasurer</b> Vanessa Urbina</p>
-    <p><b>Advisor</b> Arlene Spilker</p>
+    <p><b>President:</b> Christopher Cabana</p>
+    <p><b>Treasurer:</b> Vanessa Urbina</p>
+    <p><b>Advisor:</b> Arlene Spilker</p>
     <p> Other(s): Nathaniel Signorotti, Victoria Melgoza</p>
     <hr> 
     <p>Time: n/a</p>
@@ -624,12 +611,12 @@ mental health</p></span>
    <p class="club_title">Amateur Radio Club SJSU</p>
    
   <div class="member_title">
-    <p><b>President</b> Aimee Boun, Renee Kimbrough</p>
-    <p><b>Vice President</b> Bethany Kuo, Tai Dao</p>
-    <p><b>Treasurer</b> Daniel Lienhart</p>
-    <p><b>Fundraising Coordinator</b> Lindsay Bui</p>
-    <p><b>ACE IT Coordinator</b> Manpreet Dhillon</p>
-    <p><b>Advisor</b> Morris Jones</p>
+    <p><b>President:</b> Aimee Boun, Renee Kimbrough</p>
+    <p><b>Vice President:</b> Bethany Kuo, Tai Dao</p>
+    <p><b>Treasurer:</b> Daniel Lienhart</p>
+    <p><b>Fundraising Coordinator:</b> Lindsay Bui</p>
+    <p><b>ACE IT Coordinator:</b> Manpreet Dhillon</p>
+    <p><b>Advisor:</b> Morris Jones</p>
     <hr> 
     <p>Time: n/a</p>
     <p>Email: n/a</p>
@@ -667,9 +654,9 @@ To promote by close contact an exchange of ideas and experiences to become socia
   <p class="club_title">AkbayanSJSU</p>
    
   <div class="member_title">
-    <p><b>President</b> Camille Kae Valerio</p>
-    <p><b>Vice President</b> Malia Campos</p>
-    <p><b>Treasurer</b> Serene Chloe Agdipa</p>
+    <p><b>President:</b> Camille Kae Valerio</p>
+    <p><b>Vice President:</b> Malia Campos</p>
+    <p><b>Treasurer:</b> Serene Chloe Agdipa</p>
     <p> Other(s): NAME</p>
     <hr> 
     <p>Time: TIME</p>
@@ -708,8 +695,8 @@ To promote by close contact an exchange of ideas and experiences to become socia
   <p class="club_title">Academic Scholars Association</p>
    
   <div class="member_title">
-    <p><b>President</b> Rana Elbakkay</p>
-    <p><b>Treasurer</b> Ali Nour</p>
+    <p><b>President:</b> Rana Elbakkay</p>
+    <p><b>Treasurer:</b> Ali Nour</p>
     <p> Other(s): Edwin Reyes</p>
     <hr> 
     <p>Time: n/a</p>
@@ -717,7 +704,7 @@ To promote by close contact an exchange of ideas and experiences to become socia
   </div>
     
     <div class ="learn_more_button">
-      <form target="_blank" action="https://sjsu.my.campusapp.com/#/clubs/49229">
+      <form target="_blank" action="https://www.facebook.com/AcademicScholarsAssociation/">
       <button type="submit">Learn more</button></form></div>
   </div> 
    <div class ="card_spacer"></div>
@@ -742,9 +729,9 @@ To promote by close contact an exchange of ideas and experiences to become socia
   <p class="club_title">Women's Water Polo</p>
    
   <div class="member_title">
-    <p><b>C0-President</b> Abbie McGarvey</p>
-    <p><b>Treasurer</b> Laila Akhavi</p>
-    <p><b>Advisor</b> Kristine Adams</p>
+    <p><b>CO-President:</b> Abbie McGarvey</p>
+    <p><b>Treasurer:</b> Laila Akhavi</p>
+    <p><b>Advisor:</b> Kristine Adams</p>
     <hr> 
     <p>Time: n/a</p>
     <p>Email: n/a</p>
@@ -776,8 +763,8 @@ To promote by close contact an exchange of ideas and experiences to become socia
   <p class="club_title">AIESEC</p>
    
   <div class="member_title">
-    <p><b>President</b> Phuoc-Anh Mai, Sravanthi Prattipati</p>
-    <p><b>Treasurer</b> James Shoenhair</p>
+    <p><b>President:</b> Phuoc-Anh Mai, Sravanthi Prattipati</p>
+    <p><b>Treasurer:</b> James Shoenhair</p>
     <hr> 
     <p>Time: n/a</p>
     <p>Email: n/a</p>
@@ -808,7 +795,7 @@ To promote by close contact an exchange of ideas and experiences to become socia
   <p class="club_title">Alpha Kappa Delta Phi Sorority, Inc.</p>
    
   <div class="member_title">
-    <p> Members(s): n/a</p>
+    <p> Officers(s): n/a</p>
     <hr> 
     <p>Time: n/a</p>
     <p>Email: n/a</p>
@@ -840,8 +827,8 @@ To promote by close contact an exchange of ideas and experiences to become socia
   <p class="club_title">Men's Club Soccer</p>
    
   <div class="member_title">
-    <p><b>President</b> Sandro Sallenbach</p>
-    <p><b>Treasurer</b> Antony Ambriz</p>
+    <p><b>President;</b> Sandro Sallenbach</p>
+    <p><b>Treasurer;</b> Antony Ambriz</p>
     <hr> 
     <p>Time: n/a</p>
     <p>Email: n/a</p>
@@ -958,10 +945,6 @@ for (j = 0; j < acc.length; j++)
 }
 
 
-
-
-
-
 function refreshList(obj) {
    
   var club = document.getElementsByClassName("panel");
@@ -1056,10 +1039,7 @@ function enableIcon()
 }
 
 
-
 </script>
-
-
 
 
 
@@ -1081,9 +1061,6 @@ function showMoreDetails()
   }
 }
 </script>
-
-
-
 
 
 </div> <!---BODY_PAGE END--->
