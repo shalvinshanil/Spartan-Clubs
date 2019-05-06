@@ -205,24 +205,25 @@ float: center;
     padding-bottom: 10px; /* below */
 }
 
-/***** CLUB IMAGE *****/
+/* Club image */
 .club_image {
 	padding: 18px;
 }
 
 
-/* CLUB TITLE */
+/* Club title color */
 .club_title {
   color: black;
 }
 
-/* MEMBER TITLE */
+/* Member Info. style */
 .member_title {
   color: black;
   padding-left: 20px; /* offset */
   font-size: 13px; 
 }
 
+/* Purpose display style */
 .club_purpose {
   text-align: center;
   padding-right: 80px;
@@ -230,7 +231,14 @@ float: center;
   font-size: 14px; 
 }
 
+/* Adding Space below and offset of 'Learn more' button */
+.learn_more_button {
+  padding-bottom: 10px; /* space below the 'learn more' button */
+  padding-left: 20px;  /* offset */
+}
+
 /*********************** ICON BAR ****************************/
+/* Default Icon style */
 .icon-bar {
   position: fixed;
   top: 45%;
@@ -241,11 +249,7 @@ float: center;
 }
 
 
-.learn_more_button {
-	padding-bottom: 10px; /* space below the 'learn more' button */
-	padding-left: 20px;  /* offset */
-}
-
+/* Icon style: all clubs */
 .icon_all {
 	background-color: white;
 	border-left: 6px solid white;
@@ -254,6 +258,7 @@ float: center;
 	margin: 5px;
 }
 
+/* Icon style: academic */
 .icon_academic {
 	background-color: white;
 	border-left: 6px solid red;
@@ -262,6 +267,7 @@ float: center;
 	margin: 5px;
 }
 
+/* Icon style: special Interest */
 .icon_special_interest {
 	background-color: white;
 	border-radius: 20%;
@@ -270,6 +276,7 @@ float: center;
 	border-left: 6px solid yellow;
 }
 
+/* Icon style: fraternity */
 .icon_fraternity {
 	background-color: white;
 	border-radius: 20%;
@@ -278,6 +285,7 @@ float: center;
 	border-left: 6px solid green;
 }
 
+/* Icon style: sports */
 .icon_sports {
 	background-color: white;
 	border-radius: 20%;
@@ -286,6 +294,7 @@ float: center;
 	border-left: 6px solid blue;
 }
 
+/* Icon style: cultural */
 .icon_cultural {
 	background-color: white;
 	border-radius: 20%;
@@ -294,12 +303,9 @@ float: center;
 	border-left: 6px solid orange;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-#myInput {
-	background-image: url('/css/searchicon.png');
+/* Search Bar */
+#search_clubname {
+	background-image: url('/css/searchicon.png'); /* Search image */
 	background-position: 10px 12px;
 	background-repeat: no-repeat;
 	width: 100%;
@@ -309,13 +315,14 @@ float: center;
 	margin-bottom: 12px;
 }
 
-#myUL {
+/* */
+#UL_clubs {
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
 }
 
-#myUL li a {
+#UL_clubs li a {
 	border: 1px solid #ddd;
 	margin-top: -1px; /* Prevent double borders */
 	background-color: #f6f6f6;
@@ -326,7 +333,7 @@ float: center;
 	display: block;
 }
 
-#myUL li a:hover:not(.header) {
+#UL_clubs li a:hover:not(.header) {
 	background-color: #eee;
 }
 
@@ -452,15 +459,15 @@ onclick="sortClubs('cultural')" onmouseup="refreshList(this)">
 
 
 <!---------------------- SEARCH BAR ------------------->
-<!-- <input type="text" id="myInput" onclick="disableBtn()" onkeyup="searchClub()" placeholder="Search for names ..." title="Type in a name"> -->
-<input type="text" id="myInput" onkeyup="searchClub()" placeholder="Search for names ..." title="Type in a name">
+<!-- <input type="text" id="search_clubname" onclick="disableBtn()" onkeyup="searchClub()" placeholder="Search for names ..." title="Type in a name"> -->
+<input type="text" id="search_clubname" onkeyup="searchClub()" placeholder="Search for names ..." title="Type in a name">
 <!-- removed on click disable -->
 
 
 <hr>
 
 <!---------------------- SEARCH BUTTONS ------------------->
-<ul id="myUL"> 
+<ul id="UL_clubs"> 
 
 <!-- Photo Grid -->
 <div class="row"> 
@@ -631,7 +638,6 @@ mental health</p></span>
 <!------------------------- END ------------------------->
 
 
-
 <!----------------------NEW CLUB------------------------->
 <!---AkbayanSJSU--->
 <button class="filterDiv cultural cultural_tag"><li><a href="#">AkbayanSJSU</a></li></button>
@@ -672,10 +678,8 @@ To promote by close contact an exchange of ideas and experiences to become socia
 <!------------------------- END ------------------------->
 
 
-
 </div>
 <div class="column">
-
 
 
 <!----------------------NEW CLUB------------------------->
@@ -778,6 +782,7 @@ To promote by close contact an exchange of ideas and experiences to become socia
 </div>
 <!------------------------- END ------------------------->
 
+
 <!----------------------NEW CLUB------------------------->
 <!---Alpha Kappa Delta Phi Sorority, Inc.--->
 <button class="filterDiv fraternity fraternity_tag"><li><a href="#">Alpha Kappa Delta Phi Sorority, Inc.</a></li></button>
@@ -843,9 +848,7 @@ To promote by close contact an exchange of ideas and experiences to become socia
 <!------------------------- END ------------------------->
 
 </div> <!------COLUM END------>
-
 </div>
-
 
 </ul> 
 
@@ -856,7 +859,6 @@ To promote by close contact an exchange of ideas and experiences to become socia
 <!-------------------------- END Container ------------------------->
 
 <script>
-
 sortClubs("all")
 function sortClubs(c) 
 {
@@ -870,7 +872,6 @@ function sortClubs(c)
     if (clubsCategory[sortIndex].className.indexOf(c) > -1)	showClubs(clubsCategory[sortIndex], "show");
   }
 }
-
 
 function showClubs(currentClub, actionToShow) 
 {
@@ -886,7 +887,6 @@ function showClubs(currentClub, actionToShow)
     }
   }
 }
-
 
 function hideClubs(currentCLub, actionShow) 
 {
@@ -905,7 +905,6 @@ function hideClubs(currentCLub, actionShow)
   currentCLub.className = club.join(" "); 
 }
 
-
 // selected clubs: highlight catg
 var selectedCatg = document.getElementById("myBtnContainer");
 var btns = selectedCatg.getElementsByClassName("search_btn");
@@ -920,7 +919,6 @@ for (var index = 0; index < btns.length; index++)
     
   });
 }
-
 
 var acc = document.getElementsByClassName("filterDiv");
 var j;
@@ -944,7 +942,6 @@ for (j = 0; j < acc.length; j++)
   );
 }
 
-
 function refreshList(obj) {
    
   var club = document.getElementsByClassName("panel");
@@ -962,16 +959,15 @@ function refreshList(obj) {
   }
 }
 
-
 function searchClub() 
 {
     var input, filter, ul, li, a, i, txtValue;
     var clubsCategory;
     
     clubsCategory = document.getElementsByClassName("filterDiv");
-    input = document.getElementById("myInput");
+    input = document.getElementById("search_clubname");
     filter = input.value.toUpperCase();
-    ul = document.getElementById("myUL");
+    ul = document.getElementById("UL_clubs");
     li = ul.getElementsByTagName("li");
 
     for (i = 0; i < li.length; i++) 
@@ -992,38 +988,43 @@ function searchClub()
             hideClubs(clubsCategory[i], "show");  /* modified */
         }
         /* Fixes the bug with searching and switching catg. */
-      	if(document.getElementById("myInput").value == "")
+      	if(document.getElementById("search_clubname").value == "")
         	{	enableIcon(); 	enableBtn();	}
         	else { 	disableIcon(); 	disableBtn(); }
     }
 }
 
-
+/* Disable if search is active */
 function disableBtn() 
 {
 	document.getElementById("block_all_icon").disabled = true;
   document.getElementById("block_all").disabled = true;
   document.getElementById("block_academic").disabled = true;
   document.getElementById("block_interest").disabled = true;
-  document.getElementById("block_fraternity").disabled = true;   		           document.getElementById("block_sports").disabled = true;
+  document.getElementById("block_fraternity").disabled = true;   		           
+  document.getElementById("block_sports").disabled = true;
   document.getElementById("block_cultural").disabled = true;
 }
 
+/* Enable catg. buttons when search is not active  */
 function enableBtn() 
 {
   document.getElementById("block_all").disabled = false;
   document.getElementById("block_academic").disabled = false;
   document.getElementById("block_interest").disabled = false;
-  document.getElementById("block_fraternity").disabled = false;   		           document.getElementById("block_sports").disabled = false;
+  document.getElementById("block_fraternity").disabled = false;   		           
+  document.getElementById("block_sports").disabled = false;
   document.getElementById("block_cultural").disabled = false;
 }
 
 /* Fixes the bug with searching and switching catg w/ icon. */
+/* If search active, hide icon bar */
 function disableIcon() 
 {
   document.getElementById("icon_bar").style.display = "none";
 }
 
+/* Show icon bar when search is not active */
 function enableIcon() 
 {
   document.getElementById("icon_bar").style.display = "block";
