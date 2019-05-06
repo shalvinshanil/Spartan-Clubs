@@ -322,13 +322,14 @@ float: center;
 	margin-bottom: 12px;
 }
 
-/* */
+/* Default club list */
 #UL_clubs {
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
 }
 
+/* User input for search bar */
 #UL_clubs li a {
 	border: 1px solid #ddd;
 	margin-top: -1px; /* Prevent double borders */
@@ -340,13 +341,15 @@ float: center;
 	display: block;
 }
 
+ /* Show more, show less*/
 #UL_clubs li a:hover:not(.header) {
 	background-color: #eee;
 }
 
+/* Show more, show less */
 #more {
-	display: none;
-} /* Show more, show less*/
+	display: none; /* Hide */
+} 
 
 
 /* Float four columns side by side */
@@ -368,7 +371,7 @@ float: center;
 	clear: both;
 }
 
-/* Responsive columns */
+/* Responsive columns depending on window size */
 @media screen and (max-width: 1000px) {
   .column {
     width: 100%;
@@ -874,6 +877,7 @@ function sortClubs(c)
   var clubsCategory, sortIndex;
 
   clubsCategory = document.getElementsByClassName("filterDiv");
+  // Show active clubs & hide inactive clubs 
   if (c == "all") c = "";
   for (sortIndex = 0; sortIndex < clubsCategory.length; sortIndex++) 
   {
@@ -905,6 +909,7 @@ function hideClubs(currentCLub, actionShow)
   club = currentCLub.className.split(" ");
   currentClub = actionShow.split(" ");
   
+  // Change css-style to hide a club block 
   for (hideIndex = 0; hideIndex < currentClub.length; hideIndex++) 
   {
     while (club.indexOf(currentClub[hideIndex]) > -1) 
@@ -916,7 +921,8 @@ function hideClubs(currentCLub, actionShow)
   currentCLub.className = club.join(" "); 
 }
 
-// selected clubs: highlight catg
+// selected clubs: highlighted catg
+// Show all in active catg.
 var selectedCatg = document.getElementById("myBtnContainer");
 var btns = selectedCatg.getElementsByClassName("search_btn");
 
@@ -937,12 +943,14 @@ var j;
 
 for (j = 0; j < acc.length; j++) 
 {
+  // Wait until user selects a club
   acc[j].addEventListener("click", 
   function() 
   {
     this.classList.toggle("active");
     var panel = this.nextElementSibling; 
     
+     // Show or hide club details 
     if (panel.style.display === "block") 
     {
       panel.style.display = "none";
@@ -965,7 +973,7 @@ function refreshList(obj) {
   {
       if (club[clubIndex].style.display === "block") 
         {
-        <!---Clear active button color--->
+        /* Clear active button color */
         clubCatg[clubIndex].classList.toggle("active");  
         club[clubIndex].style.display = "none";
         }
@@ -1048,8 +1056,6 @@ function enableIcon()
 
 
 </script>
-
-
 
 <script>
 /* If a club description is too long, add button to hide */
