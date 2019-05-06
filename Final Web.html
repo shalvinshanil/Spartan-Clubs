@@ -1010,6 +1010,7 @@ function searchClub()
     {
         li[i].style.display = "none";
         hideClubs(clubsCategory[i], "show");  /* modified */
+        refreshList(clubsCategory[i]); /* modified */
     }
     /* Fixes the bug with searching and switching catg. */
   	if(document.getElementById("search_clubname").value == "")
