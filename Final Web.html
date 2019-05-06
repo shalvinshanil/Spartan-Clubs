@@ -866,7 +866,9 @@ To promote by close contact an exchange of ideas and experiences to become socia
 <!-------------------------- END Container ------------------------->
 
 <script>
-sortClubs("all")
+sortClubs("all") /* inital begin: call sort function */
+
+/* Sort function based on catg. */
 function sortClubs(c) 
 {
   var clubsCategory, sortIndex;
@@ -880,6 +882,7 @@ function sortClubs(c)
   }
 }
 
+/* Display unrelated or search function */
 function showClubs(currentClub, actionToShow) 
 {
   var clubIndex, club, checkClub;
@@ -895,6 +898,7 @@ function showClubs(currentClub, actionToShow)
   }
 }
 
+/* Hide all inactive clubs from catg. or search function */
 function hideClubs(currentCLub, actionShow) 
 {
   var hideIndex, club, currentClub;
@@ -908,7 +912,7 @@ function hideClubs(currentCLub, actionShow)
       club.splice(club.indexOf(currentClub[hideIndex]), 1);     
     }
   }
-  /* To hide unvielent types while sorting catg.*/
+  /* To hide unrelated types while sorting catg.*/
   currentCLub.className = club.join(" "); 
 }
 
@@ -927,6 +931,7 @@ for (var index = 0; index < btns.length; index++)
   });
 }
 
+/* Constantly display relevant clubs */
 var acc = document.getElementsByClassName("filterDiv");
 var j;
 
@@ -949,6 +954,7 @@ for (j = 0; j < acc.length; j++)
   );
 }
 
+/* Fuction to hide club panels (if active) when user selects catg. */
 function refreshList(obj) {
    
   var club = document.getElementsByClassName("panel");
@@ -966,38 +972,41 @@ function refreshList(obj) {
   }
 }
 
+/* Search bar correlates with searchClub function */
 function searchClub() 
 {
-    var input, filter, ul, li, a, i, txtValue;
-    var clubsCategory;
-    
-    clubsCategory = document.getElementsByClassName("filterDiv");
-    input = document.getElementById("search_clubname");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("UL_clubs");
-    li = ul.getElementsByTagName("li");
+  var input, filter, ul, li, a, i, txtValue;
+  var clubsCategory;
+  
+  clubsCategory = document.getElementsByClassName("filterDiv");
+  input = document.getElementById("search_clubname");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("UL_clubs");
+  li = ul.getElementsByTagName("li");
 
-    for (i = 0; i < li.length; i++) 
-    {
+  /* Scan user input character by character */
+  for (i = 0; i < li.length; i++) 
+  {
+    /* Get club name from list */
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
     
-        a = li[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
-        
-        if (txtValue.toUpperCase().indexOf(filter) > -1) 
-        {
-            li[i].style.display = "";
-      		showClubs(clubsCategory[i], "show"); /* modified */
-   
-        } 
-        else 
-        {
-            li[i].style.display = "none";
-            hideClubs(clubsCategory[i], "show");  /* modified */
-        }
-        /* Fixes the bug with searching and switching catg. */
-      	if(document.getElementById("search_clubname").value == "")
-        	{	enableIcon(); 	enableBtn();	}
-        	else { 	disableIcon(); 	disableBtn(); }
+    /* */
+    if (txtValue.toUpperCase().indexOf(filter) > -1) 
+    {
+      li[i].style.display = "";
+  		showClubs(clubsCategory[i], "show"); /* modified */
+
+    } 
+    else /* Hide clubs */
+    {
+        li[i].style.display = "none";
+        hideClubs(clubsCategory[i], "show");  /* modified */
+    }
+    /* Fixes the bug with searching and switching catg. */
+  	if(document.getElementById("search_clubname").value == "")
+    	{	enableIcon(); 	enableBtn();	}
+    	else { 	disableIcon(); 	disableBtn(); }
     }
 }
 
@@ -1043,6 +1052,9 @@ function enableIcon()
 
 
 <script>
+/* If a club description is too long, add button to hide */
+/* Extra detains. If user selects 'Read more', show all  */
+/* the details */
 function showMoreDetails() 
 {
   var dots = document.getElementById("dots");
